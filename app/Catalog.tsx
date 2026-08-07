@@ -208,8 +208,13 @@ export default function Catalog({ brands, totalProducts }: Props) {
         <img className="footer-logo" src="/logo.png" alt="SICA Mediciones" />
         <h2 className="contact-title">¿Interesado en algún equipo? Contáctanos</h2>
         <div className="footer-contact">
-          <a className="contact-btn contact-btn--green" href="tel:+525580615457">
-            <span aria-hidden="true">📞</span> +52 1 55 8061 5457
+          <a
+            className="contact-btn contact-btn--green"
+            href="https://wa.me/5215580615457?text=Hola%2C%20me%20interesa%20recibir%20informaci%C3%B3n%20sobre%20sus%20equipos%20SICA%20Mediciones."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span aria-hidden="true">💬</span> WhatsApp: +52 1 55 8061 5457
           </a>
           <a
             className="contact-btn contact-btn--navy"
