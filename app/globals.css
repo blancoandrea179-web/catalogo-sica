@@ -410,6 +410,8 @@ a {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  min-height: 0;
+  max-height: 90vh;
 }
 .modal-brand {
   font-size: 12px;
@@ -432,6 +434,32 @@ a {
   color: #3f5058;
   text-align: justify;
   line-height: 1.65;
+}
+
+/* Solicitud de producto dentro del modal */
+.modal-request {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.modal-request-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+.modal-request-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.modal-request .contact-btn {
+  font-size: 14.5px;
+  padding: 11px 20px;
+}
+.modal-request .contact-btn--navy {
+  border: 1px solid var(--line);
 }
 
 /* Banda de contacto destacada */
@@ -513,5 +541,6 @@ footer {
   }
   .modal-info {
     padding: 24px 22px 28px;
+    max-height: none;
   }
 }

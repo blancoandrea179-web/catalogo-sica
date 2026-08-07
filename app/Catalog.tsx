@@ -199,6 +199,34 @@ export default function Catalog({ brands, totalProducts }: Props) {
               <span className="modal-brand">{selected.brand}</span>
               <h3 className="modal-name">{selected.product.name}</h3>
               <p className="modal-desc">{selected.product.description}</p>
+
+              <div className="modal-request">
+                <span className="modal-request-title">
+                  ¿Te interesa este equipo? Solicita información:
+                </span>
+                <div className="modal-request-btns">
+                  <a
+                    className="contact-btn contact-btn--green"
+                    href={`https://wa.me/5215580615457?text=${encodeURIComponent(
+                      `Hola, me interesa solicitar información sobre el equipo "${selected.product.name}" (${selected.brand}) del catálogo SICA Mediciones.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span aria-hidden="true">💬</span> Solicitar por WhatsApp
+                  </a>
+                  <a
+                    className="contact-btn contact-btn--navy"
+                    href={`mailto:contacto@sicamedicion.com.mx?subject=${encodeURIComponent(
+                      `Solicitud de información: ${selected.product.name}`
+                    )}&body=${encodeURIComponent(
+                      `Hola,\n\nMe interesa solicitar información sobre el equipo "${selected.product.name}" (${selected.brand}) del catálogo SICA Mediciones.\n\nGracias.`
+                    )}`}
+                  >
+                    <span aria-hidden="true">✉️</span> Solicitar por correo
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
