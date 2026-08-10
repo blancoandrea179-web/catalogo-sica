@@ -2,17 +2,16 @@
 
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useMemo, useState } from "react";
-import type { Brand, Category, Priority, Sector, Product } from "@/data/catalog";
+import type { Brand, Category, Sector, Product } from "@/data/catalog";
 import {
   categoryOrder,
   priorityMeta,
-  priorityOrder,
   sectorBlurb,
   sectorOrder,
 } from "@/data/catalog";
 
 // Cómo se agrupan/segmentan las marcas en el catálogo.
-type GroupBy = "category" | "priority" | "sector";
+type GroupBy = "category" | "sector";
 
 interface Props {
   brands: Brand[];
@@ -47,7 +46,6 @@ export default function Catalog({ brands }: Props) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [groupBy, setGroupBy] = useState<GroupBy>("category");
   const [category, setCategory] = useState<Category | null>(null);
-  const [priority, setPriority] = useState<Priority | null>(null);
   const [sector, setSector] = useState<Sector | null>(null);
   const [selected, setSelected] = useState<Selected | null>(null);
 
@@ -56,7 +54,6 @@ export default function Catalog({ brands }: Props) {
   const changeGroupBy = (mode: GroupBy) => {
     setGroupBy(mode);
     setCategory(null);
-    setPriority(null);
     setSector(null);
   };
 
@@ -72,12 +69,6 @@ export default function Catalog({ brands }: Props) {
     [brands]
   );
 
-  // Prioridades de línea presentes, de mayor a menor (última columna de la matriz).
-  const availablePriorities = useMemo(
-    () => priorityOrder.filter((p) => brands.some((b) => b.priority === p)),
-    [brands]
-  );
-
   // Sectores presentes como sector prioritario principal (1° de cada marca).
   const availableSectors = useMemo(
     () => sectorOrder.filter((s) => brands.some((b) => b.sectors[0] === s)),
@@ -88,7 +79,6 @@ export default function Catalog({ brands }: Props) {
     const q = query.trim().toLowerCase();
     return brands
       .filter((b) => {
-        if (groupBy === "priority") return !priority || b.priority === priority;
         if (groupBy === "sector") return !sector || b.sectors[0] === sector;
         return !category || b.category === category;
       })
@@ -105,27 +95,11 @@ export default function Catalog({ brands }: Props) {
         return { ...b, products };
       })
       .filter((b) => b.products.length > 0);
-  }, [brands, query, groupBy, category, priority, sector]);
+  }, [brands, query, groupBy, category, sector]);
 
-  // Agrupar las marcas filtradas por la dimensión activa (categoría, prioridad
-  // o sector), respetando el orden definido por la matriz.
+  // Agrupar las marcas filtradas por la dimensión activa (categoría o sector),
+  // respetando el orden definido por la matriz.
   const groups = useMemo(() => {
-    if (groupBy === "priority") {
-      const byPrio = new Map<Priority, Brand[]>();
-      for (const b of filtered) {
-        const list = byPrio.get(b.priority);
-        if (list) list.push(b);
-        else byPrio.set(b.priority, [b]);
-      }
-      return priorityOrder
-        .filter((p) => byPrio.has(p))
-        .map((p) => ({
-          key: `prio-${p}`,
-          title: priorityMeta[p].stars,
-          sub: priorityMeta[p].label,
-          brands: byPrio.get(p)!,
-        }));
-    }
     if (groupBy === "sector") {
       // Cada marca se ubica en la sección de su sector prioritario principal (1°).
       const bySec = new Map<Sector, Brand[]>();
@@ -188,7 +162,7 @@ export default function Catalog({ brands }: Props) {
             <h1>Catálogo de Equipos</h1>
             <p>
               Ficha técnica de equipos de laboratorio y analizadores de proceso,
-              organizados por categoría, prioridad de línea, sector y marca.
+              organizados por categoría, sector y marca.
             </p>
           </div>
         </div>
@@ -208,15 +182,6 @@ export default function Catalog({ brands }: Props) {
               aria-pressed={groupBy === "category"}
             >
               Categoría
-            </button>
-            <button
-              className={`groupby-btn ${
-                groupBy === "priority" ? "groupby-btn--active" : ""
-              }`}
-              onClick={() => changeGroupBy("priority")}
-              aria-pressed={groupBy === "priority"}
-            >
-              Prioridad de línea
             </button>
             <button
               className={`groupby-btn ${
@@ -248,29 +213,6 @@ export default function Catalog({ brands }: Props) {
                     }
                   >
                     {c}
-                  </button>
-                ))}
-              </>
-            )}
-            {groupBy === "priority" && (
-              <>
-                <button
-                  className={`chip ${!priority ? "chip--active" : ""}`}
-                  onClick={() => setPriority(null)}
-                >
-                  Todas
-                </button>
-                {availablePriorities.map((p) => (
-                  <button
-                    key={p}
-                    className={`chip ${priority === p ? "chip--active" : ""}`}
-                    onClick={() =>
-                      setPriority((prev) => (prev === p ? null : p))
-                    }
-                    title={priorityMeta[p].label}
-                  >
-                    <span className="chip-stars">{priorityMeta[p].stars}</span>{" "}
-                    {priorityMeta[p].label}
                   </button>
                 ))}
               </>
