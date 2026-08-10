@@ -157,11 +157,7 @@ a {
 
 /* Menú de marcas */
 .brandnav {
-  position: sticky;
-  top: 55px;
-  z-index: 30;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(8px);
+  background: #fff;
   border-bottom: 1px solid var(--line);
   padding: 12px 16px;
 }
@@ -169,11 +165,110 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  gap: 8px;
-  overflow-x: auto;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
   padding-bottom: 2px;
-  scrollbar-width: thin;
 }
+.catfilter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.navtools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.brand-select-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+.brand-select {
+  flex: 1;
+  min-width: 0;
+  max-width: 420px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 9px 12px;
+  cursor: pointer;
+  transition: 0.15s;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23023a56' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 34px;
+}
+.brand-select:hover,
+.brand-select:focus {
+  border-color: var(--green);
+  outline: none;
+}
+
+/* Botón de búsqueda en la esquina (campo desplegable) */
+.navsearch {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.navsearch-input {
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 999px 0 0 999px;
+  font-size: 14px;
+  color: var(--ink);
+  background: #fff;
+  transition: width 0.25s ease, opacity 0.2s ease, padding 0.25s ease;
+  pointer-events: none;
+}
+.navsearch--open .navsearch-input {
+  width: clamp(150px, 42vw, 300px);
+  opacity: 1;
+  padding: 9px 14px;
+  border-color: var(--line);
+  border-right: none;
+  pointer-events: auto;
+}
+.navsearch-input:focus {
+  outline: none;
+}
+.navsearch-btn {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  line-height: 1;
+  color: #fff;
+  background: var(--navy);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.navsearch-btn:hover {
+  background: var(--navy-2);
+}
+.navsearch--open .navsearch-btn {
+  border-radius: 0 999px 999px 0;
+  background: var(--green);
+  font-size: 22px;
+}
+.navsearch--open .navsearch-btn:hover {
+  background: var(--green-d);
+}
+
 .chip {
   white-space: nowrap;
   font-size: 12.5px;
@@ -218,9 +313,60 @@ a {
   padding: 40px 0;
 }
 
+/* Encabezado de categoría (segmentación de la matriz) */
+.catgroup {
+  margin-top: 40px;
+}
+.catgroup:first-child {
+  margin-top: 8px;
+}
+.cat-head {
+  position: relative;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(2, 58, 86, 0.18);
+}
+.cat-head::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 5px;
+  border-radius: 0 4px 4px 0;
+  background: var(--green);
+}
+.cat-title {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  padding-left: 12px;
+}
+.cat-sub {
+  margin: 4px 0 0;
+  padding-left: 12px;
+  font-size: 13px;
+  color: #cfe4ef;
+}
+.cat-count {
+  position: absolute;
+  right: 20px;
+  top: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 5px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
 .brand {
   padding-top: 30px;
-  scroll-margin-top: 118px;
+  scroll-margin-top: 20px;
 }
 .brand-head {
   display: flex;
@@ -531,6 +677,15 @@ footer {
 }
 
 @media (max-width: 640px) {
+  .brand-select-label {
+    display: none;
+  }
+  .brand-select {
+    min-width: 0;
+  }
+  .navsearch--open .navsearch-input {
+    width: clamp(120px, 46vw, 220px);
+  }
   .modal {
     grid-template-columns: 1fr;
     max-height: 88vh;

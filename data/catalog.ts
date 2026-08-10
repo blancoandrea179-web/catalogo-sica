@@ -7,14 +7,31 @@ export interface Product {
   image: string | null;
 }
 
+// Categorías definidas en la matriz de responsables (columna CATEGORÍA).
+export type Category =
+  | "Laboratorio + Proceso"
+  | "Laboratorio"
+  | "Proceso"
+  | "Nueva Marca";
+
+// Orden de despliegue de las categorías en el catálogo.
+export const categoryOrder: Category[] = [
+  "Laboratorio + Proceso",
+  "Laboratorio",
+  "Proceso",
+  "Nueva Marca",
+];
+
 export interface Brand {
   name: string;
+  category: Category;
   products: Product[];
 }
 
 export const catalog: Brand[] = [
   {
     "name": "AC ANALYTICAL CONTROL B.V. (AC / PAC)",
+    "category": "Laboratorio + Proceso",
     "products": [
       {
         "name": "PIONA Prefac",
@@ -25,6 +42,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "ALCOR (PAC)",
+    "category": "Laboratorio + Proceso",
     "products": [
       {
         "name": "JFTOT® 230 Mark IV / 102401",
@@ -40,6 +58,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "AMS (Alliance / KPM Analytics)",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "Analizador de flujo continuo NexaFlo 460",
@@ -55,6 +74,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "ANTEK (PAC)",
+    "category": "Laboratorio + Proceso",
     "products": [
       {
         "name": "ElemeNtS",
@@ -65,6 +85,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "AQUA SCIENCE",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "BioLight Toxy – Modelo de Banco",
@@ -75,6 +96,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "CFR ENGINES INC.",
+    "category": "Laboratorio + Proceso",
     "products": [
       {
         "name": "Máquina Certificadora de Octano CFR",
@@ -90,6 +112,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "COSA XENTAUR",
+    "category": "Laboratorio + Proceso",
     "products": [
       {
         "name": "Analizador de Porcentaje de Oxígeno, Alpha Omega Serie 2000",
@@ -100,6 +123,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "EMCEE",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "EMCEE – Modelo 1140 MK X Microsep",
@@ -110,6 +134,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "EXTREL (Process Insights)",
+    "category": "Laboratorio + Proceso",
     "products": [
       {
         "name": "MAX300-RTG 2.0 Espectrómetro de Masas Industrial",
@@ -120,6 +145,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "GERHARDT",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "SOXTHERM",
@@ -145,6 +171,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "HERZOG (PAC)",
+    "category": "Laboratorio + Proceso",
     "products": [
       {
         "name": "Analizador automático de punto de inflamación Pensky-Martens",
@@ -165,6 +192,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "HORIBA",
+    "category": "Laboratorio + Proceso",
     "products": [
       {
         "name": "Analizador de azufre — Modelo MESA-7220V2 (ASTM D7220)",
@@ -180,6 +208,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "HOBRÉ",
+    "category": "Proceso",
     "products": [
       {
         "name": "WIM COMPAS™ — Medición de combustión de gas combustible y gas de tea",
@@ -230,6 +259,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "ISL (Instrumentation Scientifique de Laboratoire — PAC)",
+    "category": "Laboratorio + Proceso",
     "products": [
       {
         "name": "Analizador automático de punto de congelación de turbosina — OptiFZ",
@@ -260,6 +290,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "KEM (Kyoto Electronics Manufacturing)",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "ALM-155 Medidor de Alcohol",
@@ -290,6 +321,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "KING REFRIGERATION",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "King Refrigeration – Baño Líquido Brookfield BLB 702",
@@ -305,6 +337,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "LAR (Process Insights)",
+    "category": "Laboratorio + Proceso",
     "products": [
       {
         "name": "QuickTOCtrace",
@@ -315,6 +348,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "LAUDA SCIENTIFIC",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "LAUDA Scientific Tensiómetro TD 5",
@@ -330,6 +364,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "LAUDA — TERMOSTATOS",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "Línea Alpha — Termostatos de refrigeración, calefacción e inmersión",
@@ -380,6 +415,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "LAUDA — ENFRIADORAS DE RECIRCULACIÓN",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "Línea Microcool — Enfriadoras de recirculación",
@@ -395,6 +431,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "LAUDA — BAÑOS DE AGUA",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "Línea Hydro — Baños de agua",
@@ -405,6 +442,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "LAUDA — CONGELADORES",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "Línea Versafreeze — Armarios y arcones congeladores",
@@ -420,6 +458,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "LAUDA — EQUIPOS DE DESTILACIÓN",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "Línea Puridest — Equipos de destilación simple y doble",
@@ -430,6 +469,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "NIPPON INSTRUMENTS CORPORATION (NIC)",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "Analizador de Mercurio Directo MA-3000",
@@ -445,6 +485,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "PAC (Petroleum Analyzer Company)",
+    "category": "Laboratorio + Proceso",
     "products": [
       {
         "name": "Analizador Automático de destilación atmosférica OptiDist 2",
@@ -480,6 +521,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "PCS INSTRUMENTS",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "HFRR Completo",
@@ -490,6 +532,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "PHASE TECHNOLOGY (PAC)",
+    "category": "Laboratorio + Proceso",
     "products": [
       {
         "name": "Analizador de Punto de Fluidez 70Xe",
@@ -500,6 +543,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "SERVOMEX",
+    "category": "Proceso",
     "products": [
       {
         "name": "MultiExact 4100A2",
@@ -510,6 +554,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "STANHOPE-SETA",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "Analizador de Sal en Crudo",
@@ -535,6 +580,7 @@ export const catalog: Brand[] = [
   },
   {
     "name": "TANNAS",
+    "category": "Laboratorio",
     "products": [
       {
         "name": "Baño de espumación TFAB",
