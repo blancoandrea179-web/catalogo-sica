@@ -22,9 +22,77 @@ export const categoryOrder: Category[] = [
   "Nueva Marca",
 ];
 
+// Prioridad de línea definida en la matriz de responsables
+// (última columna "PRIORIDAD DE LÍNEA", expresada en estrellas ★).
+export type Priority = 5 | 4 | 3 | 2 | 1;
+
+// Orden de despliegue de las prioridades (de mayor a menor).
+export const priorityOrder: Priority[] = [5, 4, 3, 2, 1];
+
+// Etiqueta y estrellas de cada nivel de prioridad.
+export const priorityMeta: Record<
+  Priority,
+  { label: string; stars: string }
+> = {
+  5: { label: "Prioridad máxima", stars: "★★★★★" },
+  4: { label: "Prioridad alta", stars: "★★★★" },
+  3: { label: "Prioridad media", stars: "★★★" },
+  2: { label: "Prioridad baja", stars: "★★" },
+  1: { label: "Prioridad mínima", stars: "★" },
+};
+
+// Sectores prioritarios definidos en la matriz de responsables
+// (columna "SECTORES PRIORITARIOS", ordenados de mayor a menor por marca).
+export type Sector =
+  | "Petróleo/Gas"
+  | "Farmacéutica"
+  | "Alimentos"
+  | "Automotriz"
+  | "Lubricantes"
+  | "Energía"
+  | "Química"
+  | "Polímeros"
+  | "Minería"
+  | "Medio Ambiente"
+  | "Académico";
+
+// Orden de despliegue de las secciones por sector.
+export const sectorOrder: Sector[] = [
+  "Petróleo/Gas",
+  "Farmacéutica",
+  "Alimentos",
+  "Automotriz",
+  "Lubricantes",
+  "Energía",
+  "Química",
+  "Polímeros",
+  "Minería",
+  "Medio Ambiente",
+  "Académico",
+];
+
+// Descripción breve de cada sector para el encabezado de sección.
+export const sectorBlurb: Record<Sector, string> = {
+  "Petróleo/Gas": "Refinación, petroquímica y gas",
+  "Farmacéutica": "Industria farmacéutica y biotecnología",
+  "Alimentos": "Alimentos, bebidas y agroindustria",
+  "Automotriz": "Automotriz y OEM",
+  "Lubricantes": "Lubricantes y tribología",
+  "Energía": "Generación y transición energética",
+  "Química": "Industria química",
+  "Polímeros": "Polímeros y plásticos",
+  "Minería": "Minería y metales",
+  "Medio Ambiente": "Monitoreo ambiental",
+  "Académico": "Investigación y academia",
+};
+
 export interface Brand {
   name: string;
   category: Category;
+  // Prioridad tomada de la matriz de responsables (última columna).
+  priority: Priority;
+  // Sectores prioritarios, ordenados de mayor a menor (el 1° es el principal).
+  sectors: Sector[];
   products: Product[];
 }
 
@@ -32,6 +100,8 @@ export const catalog: Brand[] = [
   {
     "name": "AC ANALYTICAL CONTROL B.V. (AC / PAC)",
     "category": "Laboratorio + Proceso",
+    "priority": 5,
+    "sectors": ["Petróleo/Gas", "Lubricantes", "Automotriz", "Energía"],
     "products": [
       {
         "name": "PIONA Prefac",
@@ -43,6 +113,8 @@ export const catalog: Brand[] = [
   {
     "name": "ALCOR (PAC)",
     "category": "Laboratorio + Proceso",
+    "priority": 5,
+    "sectors": ["Petróleo/Gas", "Lubricantes", "Automotriz", "Energía"],
     "products": [
       {
         "name": "JFTOT® 230 Mark IV / 102401",
@@ -59,6 +131,8 @@ export const catalog: Brand[] = [
   {
     "name": "AMS (Alliance / KPM Analytics)",
     "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Alimentos", "Académico"],
     "products": [
       {
         "name": "Analizador de flujo continuo NexaFlo 460",
@@ -75,6 +149,8 @@ export const catalog: Brand[] = [
   {
     "name": "ANTEK (PAC)",
     "category": "Laboratorio + Proceso",
+    "priority": 5,
+    "sectors": ["Petróleo/Gas", "Lubricantes", "Automotriz", "Energía"],
     "products": [
       {
         "name": "ElemeNtS",
@@ -86,6 +162,8 @@ export const catalog: Brand[] = [
   {
     "name": "AQUA SCIENCE",
     "category": "Laboratorio",
+    "priority": 4,
+    "sectors": ["Farmacéutica", "Académico", "Medio Ambiente", "Alimentos"],
     "products": [
       {
         "name": "BioLight Toxy – Modelo de Banco",
@@ -97,6 +175,8 @@ export const catalog: Brand[] = [
   {
     "name": "CFR ENGINES INC.",
     "category": "Laboratorio + Proceso",
+    "priority": 4,
+    "sectors": ["Petróleo/Gas", "Automotriz", "Energía"],
     "products": [
       {
         "name": "Máquina Certificadora de Octano CFR",
@@ -113,6 +193,8 @@ export const catalog: Brand[] = [
   {
     "name": "COSA XENTAUR",
     "category": "Laboratorio + Proceso",
+    "priority": 4,
+    "sectors": ["Petróleo/Gas", "Alimentos", "Química", "Polímeros"],
     "products": [
       {
         "name": "Analizador de Porcentaje de Oxígeno, Alpha Omega Serie 2000",
@@ -124,6 +206,8 @@ export const catalog: Brand[] = [
   {
     "name": "EMCEE",
     "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Petróleo/Gas"],
     "products": [
       {
         "name": "EMCEE – Modelo 1140 MK X Microsep",
@@ -135,6 +219,8 @@ export const catalog: Brand[] = [
   {
     "name": "EXTREL (Process Insights)",
     "category": "Laboratorio + Proceso",
+    "priority": 4,
+    "sectors": ["Petróleo/Gas", "Alimentos", "Química", "Polímeros"],
     "products": [
       {
         "name": "MAX300-RTG 2.0 Espectrómetro de Masas Industrial",
@@ -146,6 +232,8 @@ export const catalog: Brand[] = [
   {
     "name": "GERHARDT",
     "category": "Laboratorio",
+    "priority": 4,
+    "sectors": ["Alimentos", "Académico", "Farmacéutica"],
     "products": [
       {
         "name": "SOXTHERM",
@@ -172,6 +260,8 @@ export const catalog: Brand[] = [
   {
     "name": "HERZOG (PAC)",
     "category": "Laboratorio + Proceso",
+    "priority": 5,
+    "sectors": ["Petróleo/Gas", "Lubricantes", "Automotriz", "Energía"],
     "products": [
       {
         "name": "Analizador automático de punto de inflamación Pensky-Martens",
@@ -193,6 +283,8 @@ export const catalog: Brand[] = [
   {
     "name": "HORIBA",
     "category": "Laboratorio + Proceso",
+    "priority": 5,
+    "sectors": ["Petróleo/Gas", "Automotriz", "Farmacéutica", "Medio Ambiente", "Académico"],
     "products": [
       {
         "name": "Analizador de azufre — Modelo MESA-7220V2 (ASTM D7220)",
@@ -209,6 +301,8 @@ export const catalog: Brand[] = [
   {
     "name": "HOBRÉ",
     "category": "Proceso",
+    "priority": 4,
+    "sectors": ["Petróleo/Gas", "Alimentos", "Química"],
     "products": [
       {
         "name": "WIM COMPAS™ — Medición de combustión de gas combustible y gas de tea",
@@ -260,6 +354,8 @@ export const catalog: Brand[] = [
   {
     "name": "ISL (Instrumentation Scientifique de Laboratoire — PAC)",
     "category": "Laboratorio + Proceso",
+    "priority": 5,
+    "sectors": ["Petróleo/Gas", "Lubricantes", "Automotriz", "Energía"],
     "products": [
       {
         "name": "Analizador automático de punto de congelación de turbosina — OptiFZ",
@@ -291,6 +387,8 @@ export const catalog: Brand[] = [
   {
     "name": "KEM (Kyoto Electronics Manufacturing)",
     "category": "Laboratorio",
+    "priority": 5,
+    "sectors": ["Farmacéutica", "Petróleo/Gas", "Alimentos", "Química", "Académico"],
     "products": [
       {
         "name": "ALM-155 Medidor de Alcohol",
@@ -322,6 +420,8 @@ export const catalog: Brand[] = [
   {
     "name": "KING REFRIGERATION",
     "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Automotriz", "Lubricantes", "Académico"],
     "products": [
       {
         "name": "King Refrigeration – Baño Líquido Brookfield BLB 702",
@@ -338,6 +438,8 @@ export const catalog: Brand[] = [
   {
     "name": "LAR (Process Insights)",
     "category": "Laboratorio + Proceso",
+    "priority": 4,
+    "sectors": ["Petróleo/Gas", "Alimentos", "Química", "Polímeros"],
     "products": [
       {
         "name": "QuickTOCtrace",
@@ -349,6 +451,8 @@ export const catalog: Brand[] = [
   {
     "name": "LAUDA SCIENTIFIC",
     "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Farmacéutica", "Química", "Polímeros", "Lubricantes", "Académico"],
     "products": [
       {
         "name": "LAUDA Scientific Tensiómetro TD 5",
@@ -365,6 +469,8 @@ export const catalog: Brand[] = [
   {
     "name": "LAUDA — TERMOSTATOS",
     "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Farmacéutica", "Química", "Polímeros", "Lubricantes", "Académico"],
     "products": [
       {
         "name": "Línea Alpha — Termostatos de refrigeración, calefacción e inmersión",
@@ -416,6 +522,8 @@ export const catalog: Brand[] = [
   {
     "name": "LAUDA — ENFRIADORAS DE RECIRCULACIÓN",
     "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Farmacéutica", "Química", "Polímeros", "Lubricantes", "Académico"],
     "products": [
       {
         "name": "Línea Microcool — Enfriadoras de recirculación",
@@ -432,6 +540,8 @@ export const catalog: Brand[] = [
   {
     "name": "LAUDA — BAÑOS DE AGUA",
     "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Farmacéutica", "Química", "Polímeros", "Lubricantes", "Académico"],
     "products": [
       {
         "name": "Línea Hydro — Baños de agua",
@@ -443,6 +553,8 @@ export const catalog: Brand[] = [
   {
     "name": "LAUDA — CONGELADORES",
     "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Farmacéutica", "Química", "Polímeros", "Lubricantes", "Académico"],
     "products": [
       {
         "name": "Línea Versafreeze — Armarios y arcones congeladores",
@@ -459,6 +571,8 @@ export const catalog: Brand[] = [
   {
     "name": "LAUDA — EQUIPOS DE DESTILACIÓN",
     "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Farmacéutica", "Química", "Polímeros", "Lubricantes", "Académico"],
     "products": [
       {
         "name": "Línea Puridest — Equipos de destilación simple y doble",
@@ -470,6 +584,8 @@ export const catalog: Brand[] = [
   {
     "name": "NIPPON INSTRUMENTS CORPORATION (NIC)",
     "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Minería", "Farmacéutica", "Química", "Alimentos", "Académico", "Petróleo/Gas"],
     "products": [
       {
         "name": "Analizador de Mercurio Directo MA-3000",
@@ -486,6 +602,8 @@ export const catalog: Brand[] = [
   {
     "name": "PAC (Petroleum Analyzer Company)",
     "category": "Laboratorio + Proceso",
+    "priority": 5,
+    "sectors": ["Petróleo/Gas", "Lubricantes", "Automotriz", "Energía"],
     "products": [
       {
         "name": "Analizador Automático de destilación atmosférica OptiDist 2",
@@ -522,6 +640,8 @@ export const catalog: Brand[] = [
   {
     "name": "PCS INSTRUMENTS",
     "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Lubricantes", "Automotriz", "Académico"],
     "products": [
       {
         "name": "HFRR Completo",
@@ -533,6 +653,8 @@ export const catalog: Brand[] = [
   {
     "name": "PHASE TECHNOLOGY (PAC)",
     "category": "Laboratorio + Proceso",
+    "priority": 5,
+    "sectors": ["Petróleo/Gas", "Lubricantes", "Automotriz", "Energía"],
     "products": [
       {
         "name": "Analizador de Punto de Fluidez 70Xe",
@@ -544,6 +666,8 @@ export const catalog: Brand[] = [
   {
     "name": "SERVOMEX",
     "category": "Proceso",
+    "priority": 5,
+    "sectors": ["Petróleo/Gas", "Energía", "Química", "Medio Ambiente"],
     "products": [
       {
         "name": "MultiExact 4100A2",
@@ -555,6 +679,8 @@ export const catalog: Brand[] = [
   {
     "name": "STANHOPE-SETA",
     "category": "Laboratorio",
+    "priority": 4,
+    "sectors": ["Petróleo/Gas", "Química", "Lubricantes"],
     "products": [
       {
         "name": "Analizador de Sal en Crudo",
@@ -581,6 +707,8 @@ export const catalog: Brand[] = [
   {
     "name": "TANNAS",
     "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Automotriz", "Lubricantes", "Académico"],
     "products": [
       {
         "name": "Baño de espumación TFAB",
