@@ -1,6 +1,7 @@
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type { Brand, Category, Sector, Product } from "@/data/catalog";
 import {
@@ -154,10 +155,10 @@ export default function Catalog({ brands }: Props) {
     <>
       <div className="topbar" />
       <header className="hero">
+        <Link className="hero-home-link" href="/">
+          <span aria-hidden="true">←</span> Inicio
+        </Link>
         <div className="hero-brand">
-          <span className="hero-logo-wrap">
-            <img className="hero-logo" src="/logo.png" alt="SICA Mediciones" />
-          </span>
           <div className="hero-titles">
             <h1>Catálogo de Equipos</h1>
             <p>

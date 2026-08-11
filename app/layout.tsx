@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Catálogo de Equipos — SICA Mediciones",
+  title: "SICA Mediciones — Servicio, Ingeniería y Control Avanzado",
   description:
-    "Catálogo de equipos de laboratorio y analizadores de proceso de SICA Mediciones, organizados por marca.",
+    "Instrumentación analítica, metrología y servicios de medición en México y Centroamérica. Venta de equipo, calibración, análisis y mantenimiento, certificados ISO 9001:2015 e ISO 17025:2017.",
 };
 
 export default function RootLayout({
