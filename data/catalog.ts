@@ -143,6 +143,26 @@ export const catalog: Brand[] = [
         "name": "Smartchem 450 Analizador Discreto para Química Automatizada",
         "description": "El analizador discreto SmartChem® 450 es un equipo de química húmeda totalmente automatizado, diseñado para realizar análisis fotométricos y electroquímicos eficientes con un rendimiento de hasta 450 pruebas por hora. Con capacidad para procesar hasta 100 muestras, controles y calibradores, además de 72 reactivos diferentes, incorpora módulos opcionales para la preparación de muestras destinados a la medición de pH, conductividad, ORP y nitratos. Su software intuitivo, combinado con lectores de códigos de barras opcionales y reactivos listos para usar, simplifica el manejo, minimiza la intervención manual, reduce el error humano y aumenta considerablemente la productividad del laboratorio.",
         "image": "/images/image5.jpg"
+      },
+      {
+        "name": "Icinac — Detección Multiparamétrica de Fermentos Lácticos",
+        "description": "El Icinac de AMS Alliance (KPM Analytics) es una solución diseñada específicamente para monitorear y analizar la actividad de acidificación de los fermentos lácticos, mediante la medición de pH con múltiples sondas y el análisis de bacterias del ácido láctico (LAB). Es ideal para el desarrollo y control de cultivos iniciadores, funcionales, bioprotectores y probióticos.",
+        "image": "/images/image100.jpg"
+      },
+      {
+        "name": "SmartChem 200 Analizador Discreto",
+        "description": "El SmartChem 200 de AMS Alliance (KPM Analytics) es un analizador discreto de química húmeda por fotometría, totalmente automatizado, con capacidad de hasta 200 pruebas por hora y dilución automática final e inicial. Su diseño compacto integra el lavado y filtrado, siendo idóneo para el análisis ambiental y agroindustrial de aguas, fertilizantes y suelos.",
+        "image": "/images/image101.jpg"
+      },
+      {
+        "name": "SmartChem 600 Analizador Discreto",
+        "description": "El SmartChem 600 de AMS Alliance (KPM Analytics) es el analizador discreto de química húmeda de mayor capacidad de la gama, con un rendimiento de hasta 600 pruebas por hora, carga de 200 posiciones y 3 brazos de muestreo para máxima eficiencia. Realiza análisis fotométricos multiparamétricos automatizados para laboratorios de alta demanda.",
+        "image": "/images/image102.jpg"
+      },
+      {
+        "name": "Futura 3 Analizador de Flujo Continuo",
+        "description": "El Futura 3 de AMS Alliance (KPM Analytics) es un analizador automatizado de química húmeda de flujo continuo, dedicado a identificar y medir contaminantes en agua y suelo (fenoles, cianuros, detergentes, fósforo total, nitrógeno total, entre otros), con automuestreo continuo de efluente de hasta 120 análisis por hora. Es compatible con LIMS y cumple normas ISO, EPA, AFNOR y COFRAC.",
+        "image": "/images/image103.jpg"
       }
     ]
   },
@@ -254,6 +274,21 @@ export const catalog: Brand[] = [
         "name": "N-Realyzer",
         "description": "El N-Realyzer de Gerhardt es un analizador de nitrógeno/proteína totalmente automático basado en el método Dumas, capaz de procesar en serie hasta 100 muestras sólidas o líquidas con cualquier contenido de nitrógeno. Su autosampler patentado permite insertar muestras urgentes de forma flexible sin desordenar la secuencia, cuenta con separación de agua en dos etapas y una interfaz de usuario intuitiva (REAL-OS) que indica el estado operativo mediante un sistema de colores.",
         "image": "/images/image16.jpg"
+      },
+      {
+        "name": "DUMATHERM®",
+        "description": "El DUMATHERM de Gerhardt es un analizador para la determinación automática del contenido de nitrógeno y proteína mediante el método de combustión Dumas, que entrega resultados en tan solo 3 a 5 minutos con un consumo de oxígeno hasta 10 veces menor que equipos similares. Es ideal para el análisis de proteína en alimentos, piensos y fertilizantes con mínima intervención del operador.",
+        "image": "/images/image87.jpg"
+      },
+      {
+        "name": "VAPODEST®",
+        "description": "El VAPODEST de Gerhardt es un destilador automático por arrastre de vapor para la determinación del contenido de nitrógeno y proteína por el método Kjeldahl, así como de amonio en muestras sólidas y líquidas. Incorpora la función Softstart de inicio gradual para muestras difíciles y un ajuste delicado de la potencia de vapor que garantiza destilaciones seguras y reproducibles.",
+        "image": "/images/image88.jpg"
+      },
+      {
+        "name": "HYDROTHERM®",
+        "description": "El HYDROTHERM de Gerhardt automatiza la hidrólisis ácida previa a la determinación de grasa total según el método de Weibull-Stoldt, procesando hasta 6 muestras simultáneas en menos de 2 horas. Combinado con el sistema de extracción SOXTHERM, permite un flujo de trabajo completo y seguro para el análisis de grasa total en alimentos y piensos.",
+        "image": "/images/image89.jpg"
       }
     ]
   },
@@ -295,6 +330,11 @@ export const catalog: Brand[] = [
         "name": "Analizador de azufre total — Modelo SLFA 6800 (ASTM D4294)",
         "description": "El HORIBA SLFA-6800 es un analizador compacto de fluorescencia de rayos X de dispersión de energía (EDXRF) que mide azufre en aceite en un rango de 5 ppm a 9.9999%, cumpliendo ASTM D4294, ISO 8754 y JIS K2541/B7995. Cuenta con carrusel de hasta 8 posiciones de muestra, pantalla a color, salida USB y blindaje de obturador para prevenir fugas de rayos X.",
         "image": "/images/image21.jpg"
+      },
+      {
+        "name": "XPLORER — Analizador Elemental de Cloruro Orgánico",
+        "description": "El XPLORER de HORIBA (Trace Elemental Instruments) es un analizador elemental para la determinación de cloruro orgánico —así como azufre y nitrógeno— mediante combustión pirolítica seguida de microcoulometría. Es un sistema compacto y muy preciso, con software intuitivo, utilizado en el control de contaminantes en productos petroquímicos y químicos.",
+        "image": "/images/image96.jpg"
       }
     ]
   },
@@ -414,6 +454,36 @@ export const catalog: Brand[] = [
         "name": "Kit KEM GVA-710H Analizador de Volumen de Gas, modelo especial Heineken",
         "description": "El GVA-710 de KEM es un analizador de volumen de gas empleado en la industria de bebidas para medir la carbonatación/gasificación (CO₂) de productos como cerveza; el modelo especial \"Heineken\" corresponde a una configuración específica solicitada por dicho cliente dentro de la línea de analizadores de bebidas de KEM.",
         "image": "/images/image40.jpg"
+      },
+      {
+        "name": "KEM DA-650 Densímetro / Medidor de Concentración",
+        "description": "El DA-650 de KEM es un densímetro/medidor de concentración de sobremesa basado en el principio de oscilación de frecuencia resonante, con succión automática de la muestra y control de temperatura de 0 a 96 °C. Ofrece mediciones rápidas y de alta precisión de densidad, gravedad específica y concentración, y puede acoplarse con otros equipos KEM para análisis multiparamétrico.",
+        "image": "/images/image90.jpg"
+      },
+      {
+        "name": "KEM RA-600 Refractómetro Automático",
+        "description": "El RA-600 de KEM es un refractómetro automático que determina el índice de refracción, los grados Brix y la concentración mediante detección del ángulo crítico de refracción óptica, con control de temperatura de la muestra de 5 a 75 °C y alta resistencia a la corrosión. Puede combinarse con un densímetro KEM para medir densidad e índice de refracción de forma simultánea.",
+        "image": "/images/image91.jpg"
+      },
+      {
+        "name": "KEM MKC-710 Titulador Karl Fischer Coulométrico",
+        "description": "El MKC-710 de KEM es un titulador de humedad por el método Karl Fischer coulométrico, con una gran pantalla táctil a color, para la determinación de trazas de agua en líquidos orgánicos y otras matrices. Ofrece alta sensibilidad y reproducibilidad en la medición de bajos contenidos de humedad.",
+        "image": "/images/image92.jpg"
+      },
+      {
+        "name": "KEM MKV-710 Titulador Karl Fischer Volumétrico",
+        "description": "El MKV-710 de KEM es un titulador de humedad por el método Karl Fischer volumétrico, equipado con una gran pantalla táctil a color, para la determinación de agua en un amplio rango de concentraciones en diversas matrices. Complementa al modelo coulométrico MKC-710 para muestras con mayor contenido de humedad.",
+        "image": "/images/image93.jpg"
+      },
+      {
+        "name": "KEM ADP-611 Evaporador de Humedad",
+        "description": "El ADP-611 de KEM es un sistema de evaporación de humedad y arrastre que se acopla a los tituladores Karl Fischer para eliminar interferencias en muestras difíciles, con control automático de flujo y temperatura. Evapora la humedad de la muestra y la arrastra hacia la celda de titulación, permitiendo analizar sólidos, muestras insolubles o de matrices complejas.",
+        "image": "/images/image94.jpg"
+      },
+      {
+        "name": "KEM GVA-700 Analizador de Volumen de Gas",
+        "description": "El GVA-700 de KEM es un analizador de volumen de gas para la determinación automática del volumen y la presión internos de gases en bebidas gasificadas y carbonatadas, basado en la medición de presión absoluta. Cuenta con agitación automática y admite recipientes de hasta 2 L, siendo idóneo para el control de la carbonatación en cerveza, refrescos y otras bebidas.",
+        "image": "/images/image95.jpg"
       }
     ]
   },
@@ -445,6 +515,11 @@ export const catalog: Brand[] = [
         "name": "QuickTOCtrace",
         "description": "El LAR QuickTOCtrace es un analizador de carbono orgánico total (TOC) en línea diseñado para los rangos de medición más bajos, empleando oxidación UV y medición diferencial de conductividad, ideal para agua pura y ultrapura. Es compacto, con tiempo de reacción corto (primeros resultados en 30 segundos), cubre un rango de 0.1 a 1,000 ppb y cumple normas como USP <643>, <645> y EP 2.2.44, siendo especialmente utilizado en la industria farmacéutica y de semiconductores.",
         "image": "/images/image43.jpg"
+      },
+      {
+        "name": "QuickTOCpurity",
+        "description": "El LAR QuickTOCpurity es un sistema de medición de carbono orgánico total (TOC) en línea para agua pura, basado en oxidación por combustión a CO2, que determina el carbono total (TC), el carbono orgánico total (TOC), el carbono inorgánico total (TIC) y el carbono orgánico disuelto (DOC). Está orientado al monitoreo continuo de la calidad del agua en aplicaciones exigentes.",
+        "image": "/images/image105.jpg"
       }
     ]
   },
@@ -463,6 +538,51 @@ export const catalog: Brand[] = [
         "name": "LAUDA Scientific Viscotemp 15 S",
         "description": "El Viscotemp 15 de LAUDA Scientific es un baño viscotermostato con carcasa de acero inoxidable de alta calidad y ventana de vidrio, utilizado para el temperado preciso de viscosímetros capilares de vidrio en el rango de 0 a 105°C, conforme a normas como ASTM D445, ISO 3105 y DIN 51562/53000. Puede usarse con hasta cuatro estaciones de medición manuales o dos estaciones automáticas.",
         "image": "/images/image45.jpg"
+      },
+      {
+        "name": "LAUDA Scientific ET 15 S",
+        "description": "El ET 15 S de LAUDA Scientific es un baño viscosimétrico transparente para la determinación manual de la viscosidad cinemática con viscosímetros capilares de vidrio, en un rango de temperatura de 0 a 105 °C. Ofrece una operación sencilla y económica conforme a normas como ASTM D445, ISO 3104 e ISO 3105, con excelente estabilidad térmica y buena visibilidad de los capilares.",
+        "image": "/images/image78.jpg"
+      },
+      {
+        "name": "LAUDA Scientific PV(L) 15/24",
+        "description": "El PV(L) 15/24 de LAUDA Scientific es un sistema automático para la determinación de la viscosidad cinemática a altas y bajas temperaturas mediante barreras ópticas de infrarrojo, que cubre un rango de -60 a 230 °C. Proporciona resultados repetibles y precisos conforme a ASTM D445 e ISO 3104, reduciendo la intervención del operador respecto a los métodos manuales.",
+        "image": "/images/image79.jpg"
+      },
+      {
+        "name": "LAUDA Scientific VRM-VAS",
+        "description": "El VRM-VAS de LAUDA Scientific es un módulo de automatización con brazo robótico para la limpieza y el muestreo en la determinación de viscosidad, que se acopla de forma modular a los viscosímetros LAUDA. Automatiza las etapas de dosificación, medición y lavado de capilares, aumentando la productividad y la reproducibilidad del laboratorio.",
+        "image": "/images/image80.jpg"
+      },
+      {
+        "name": "LAUDA Scientific MPT C",
+        "description": "El MPT C de LAUDA Scientific es un tensiómetro de presión de burbuja para la determinación automática de la tensión superficial dinámica según el método de Fainerman, con mediciones programables desde 1 ms. Es ideal para caracterizar surfactantes y evaluar la cinética de adsorción en tintas, detergentes, cosméticos y formulaciones.",
+        "image": "/images/image81.jpg"
+      },
+      {
+        "name": "LAUDA Scientific TD4",
+        "description": "El TD4 de LAUDA Scientific es un tensiómetro de fuerza para la determinación automática de la tensión superficial e interfacial y de la concentración micelar crítica (CMC), empleando los métodos de anillo de Du Noüy y placa de Wilhelmy. Es un sistema compacto y sencillo de utilizar, con resultados almacenables en PC, orientado a control de calidad e investigación.",
+        "image": "/images/image82.jpg"
+      },
+      {
+        "name": "LAUDA Scientific TVT 2",
+        "description": "El TVT 2 de LAUDA Scientific es un tensiómetro de volumen de gota para la determinación automática de la tensión superficial e interfacial dinámica, con ajuste micrométrico del posicionamiento y compatibilidad con jeringas de distintos tamaños. Permite estudiar la cinética interfacial en un amplio rango de tiempos de vida de gota.",
+        "image": "/images/image83.jpg"
+      },
+      {
+        "name": "LAUDA Scientific LSA 50",
+        "description": "El LSA 50 de LAUDA Scientific es un goniómetro para la determinación automática del ángulo de contacto por el método de volumen de gota, con un diseño compacto y modular ampliable a futuras mejoras. Se utiliza para analizar agentes de limpieza, adhesivos, pinturas y recubrimientos, evaluando la mojabilidad y la energía superficial de todo tipo de muestras.",
+        "image": "/images/image84.jpg"
+      },
+      {
+        "name": "LAUDA Scientific LSA 100",
+        "description": "El LSA 100 de LAUDA Scientific es un analizador óptico de superficies para la determinación automática del ángulo de contacto, la tensión superficial e interfacial y la CMC por volumen de gota, equipado con una cámara de alta resolución configurable mediante software. Es idóneo para el estudio de mojabilidad, adhesión y energía superficial en investigación y control de calidad.",
+        "image": "/images/image85.jpg"
+      },
+      {
+        "name": "LAUDA Scientific LSA 200",
+        "description": "El LSA 200 de LAUDA Scientific es la versión de mayor desempeño de la serie LSA para la determinación automática del ángulo de contacto, la tensión superficial e interfacial y la CMC, con la máxima resolución y movimiento automático en todos los ejes. Está diseñado para las aplicaciones más exigentes de caracterización de superficies e interfases.",
+        "image": "/images/image86.jpg"
       }
     ]
   },
@@ -634,6 +754,11 @@ export const catalog: Brand[] = [
         "name": "Advanced Sensors — S-One / X-One / Watercut / Microscopía",
         "description": "Advanced Sensors, marca de PAC, desarrolla analizadores en línea para medición de aceite en agua y agua en aceite en procesos de producción de petróleo y gas. Su portafolio incluye el S-One y X-One (nueva generación de la exitosa serie EX para medición de aceite en agua), el Watercut (serie WIO-300, medición de alta sensibilidad de agua en aceite) y el analizador de Microscopía, que mide sólidos y aceite en agua producida apoyándose en inteligencia artificial y aprendizaje automático.",
         "image": "/images/image68.jpg"
+      },
+      {
+        "name": "OptiFlash Cleveland Open Cup",
+        "description": "El OptiFlash Cleveland Open Cup, de Herzog by PAC, es un analizador automático del punto de inflamación y combustión por el método de copa abierta Cleveland, conforme a ASTM D92, con temperaturas de ensayo de hasta 400 °C. Incorpora detección automática del punto de inflamación, encendido y extinción controlados y funciones de seguridad para el análisis desatendido de productos derivados del petróleo.",
+        "image": "/images/image97.jpg"
       }
     ]
   },
@@ -673,6 +798,11 @@ export const catalog: Brand[] = [
         "name": "MultiExact 4100A2",
         "description": "El Servomex MultiExact 4100 es un sistema modular de análisis de gases que, en la configuración especificada, incorpora dos módulos de medición: uno de control de O2 y otro de CO2 al 20%, cada uno con dos alarmas configurables y salida analógica aislada de 4-20 mA. Cuenta con comunicación serial RS485/Modbus, cuatro contactos de relé, montaje en rack y manual del operador en inglés; el equipo está clasificado bajo el código de producto 902710 (país de origen: Reino Unido).",
         "image": "/images/image71.jpg"
+      },
+      {
+        "name": "SERVOFLEX MiniFoodPack 5200",
+        "description": "El Servomex SERVOFLEX MiniFoodPack 5200 es un analizador de gases de sobremesa portátil, de pequeño volumen de muestra, para la medición individual o simultánea de O2 y CO2 mediante tecnología paramagnética e infrarroja. Está centrado en la verificación y el control de calidad de mezclas de gases en envases de atmósfera modificada (MAP) en la industria de alimentos y bebidas.",
+        "image": "/images/image104.jpg"
       }
     ]
   },
@@ -701,6 +831,11 @@ export const catalog: Brand[] = [
         "name": "Seta Centrífuga de Prueba de Aceite – 4 posiciones — 90000-3",
         "description": "La centrífuga Seta Oil Test Centrifuge de 4 posiciones es una centrífuga de cámara calentada (ambiente a 80°C) controlada por microprocesador, utilizada para determinar agua y sedimento en aceites, combustibles y crudo. Su rotor basculante de 4 posiciones con adaptadores acojinados admite tubos cónicos, en forma de pera, de sedimento traza de 6 y 8 pulgadas, y tubos de 12.5 ml, manteniendo las muestras casi verticales en reposo para una medición precisa del sedimento; cumple métodos como ASTM D91, D893, D1796, D2273, D2709, D2711, D4007, ISO 3734, ISO 9030 e ISO 15301.",
         "image": "/images/image75.jpg"
+      },
+      {
+        "name": "Seta Herschel Emulsifier — 96700-2",
+        "description": "El Herschel Emulsifier (96700-2) de Stanhope-Seta evalúa la capacidad de un aceite para separarse del agua (características de emulsión/desemulsibilidad) conforme a ASTM D1401, empleado en aceites de turbina, hidráulicos y de circulación. Sus estaciones agitan la mezcla aceite-agua bajo condiciones controladas y permiten observar el tiempo de separación de las fases.",
+        "image": "/images/image99.jpg"
       }
     ]
   },
@@ -708,7 +843,7 @@ export const catalog: Brand[] = [
     "name": "TANNAS",
     "category": "Laboratorio",
     "priority": 3,
-    "sectors": ["Automotriz", "Lubricantes", "Académico"],
+    "sectors": ["Energía", "Automotriz", "Lubricantes", "Académico"],
     "products": [
       {
         "name": "Baño de espumación TFAB",
@@ -719,6 +854,16 @@ export const catalog: Brand[] = [
         "name": "Tannas Quantum™ Analizador de Oxidación",
         "description": "El Tannas Quantum Analizador de Oxidación es un equipo de sobremesa, sin baño líquido, que realiza pruebas de estabilidad a la oxidación como TFOUT (Thin Film Oxygen Uptake Test, ASTM D4742) y RPVOT/RBOT (Rotating Pressure Vessel Oxidation Test, ASTM D2272), calentando la muestra en un cilindro seco (en lugar del tradicional baño de líquido caliente), lo que elimina el manejo de medios líquidos peligrosos y los olores asociados a la oxidación de aceite.",
         "image": "/images/image77.jpg"
+      },
+      {
+        "name": "Tannas NOACK S2 — Prueba de Volatilidad",
+        "description": "El NOACK S2 de Tannas determina la pérdida por evaporación (volatilidad) de aceites lubricantes según el método Noack, conforme a ASTM D5800, un parámetro clave para las especificaciones de aceites de motor. Cuenta con controlador de pantalla táctil a color y un diseño robusto que facilita ensayos seguros, precisos y reproducibles.",
+        "image": "/images/image98.jpg"
+      },
+      {
+        "name": "Tannas Quantum® Pro — Analizador de Oxidación",
+        "description": "El Quantum Pro de Tannas es la más reciente generación de su analizador de estabilidad a la oxidación de sobremesa y la única solución de bloque seco (dry-block) conforme a ASTM D2272, que elimina los baños de aceite caliente peligrosos y sus olores al calentar la muestra en un cilindro seco de acero inoxidable. Realiza las pruebas RPVOT/RBOT (ASTM D2272, D2112, IP 229), TFOUT (ASTM D4742, D7098) y de oxidación de grasa (ASTM D942), evaluando la resistencia a la oxidación de aceites de turbina de vapor, aceites aislantes, aceites nuevos y en servicio y aceites de motor a gasolina. Incorpora interfaz de pantalla táctil con adquisición de datos integrada, llenado y purga automáticos, gráfica en vivo del ensayo con almacenamiento a bordo, control de velocidad en lazo cerrado, envío automático de reportes por Ethernet y un consumo de energía de 20 a 30% menor que el Quantum original.",
+        "image": "/images/image106.jpg"
       }
     ]
   }
