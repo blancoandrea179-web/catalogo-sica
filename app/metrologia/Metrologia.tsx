@@ -17,6 +17,7 @@ interface Magnitude {
   code: string;
   name: string;
   icon: string;
+  image: string;
   blurb: string;
   scopes: Scope[];
   // Notas adicionales (tipos de instrumento, marcas compatibles, etc.).
@@ -31,6 +32,7 @@ const magnitudes: Magnitude[] = [
     code: "FL-01",
     name: "Flujo",
     icon: "💧",
+    image: "/images/metro-flujo.png",
     blurb:
       "Calibración de medidores de flujo de líquidos, másico y de gas natural, y evaluación de la conformidad de sistemas de medición de caudal.",
     scopes: [
@@ -59,6 +61,7 @@ const magnitudes: Magnitude[] = [
     code: "T-68",
     name: "Temperatura",
     icon: "🌡️",
+    image: "/images/metro-temperatura.png",
     blurb:
       "Calibración de termómetros de lectura directa, de líquido en vidrio, de resistencia de platino, bimetálicos y sistemas de medición de temperatura.",
     scopes: [
@@ -76,6 +79,7 @@ const magnitudes: Magnitude[] = [
     code: "P-84",
     name: "Presión",
     icon: "⏲️",
+    image: "/images/metro-presion.png",
     blurb:
       "Calibración de manómetros, barómetros y vacuómetros de presión absoluta, relativa y diferencial, además de indicadores y transmisores de presión.",
     scopes: [
@@ -95,6 +99,7 @@ const magnitudes: Magnitude[] = [
     code: "DEN-07",
     name: "Densidad",
     icon: "⚗️",
+    image: "/images/metro-densidad.png",
     blurb:
       "Calibración de densímetros digitales de tubo oscilatorio, picnómetros y medidores de densidad en línea.",
     scopes: [
@@ -122,6 +127,7 @@ const magnitudes: Magnitude[] = [
     code: "D-152",
     name: "Dimensional",
     icon: "📏",
+    image: "/images/metro-dimensional.png",
     blurb:
       "Calibración de medidores automáticos de nivel en tanques de almacenamiento y patrones de longitud (cintas, flexómetros y reglas).",
     scopes: [
@@ -145,6 +151,7 @@ const magnitudes: Magnitude[] = [
     code: "V-45",
     name: "Volumen",
     icon: "🛢️",
+    image: "/images/metro-volumen.png",
     blurb:
       "Cubicación de tanques de almacenamiento verticales, horizontales, esféricos, móviles y en buques, además de probadores y medidas volumétricas.",
     scopes: [
@@ -313,14 +320,16 @@ export default function Metrologia() {
                   key={m.code}
                   onClick={() => setSelected(m)}
                 >
-                  <span className="metro-card-icon" aria-hidden="true">
-                    {m.icon}
+                  <span className="metro-card-img">
+                    <img loading="lazy" src={m.image} alt={`Calibración de ${m.name}`} />
+                    <span className="metro-card-code">{m.code}</span>
                   </span>
-                  <span className="metro-card-code">{m.code}</span>
-                  <h3 className="metro-card-name">{m.name}</h3>
-                  <p className="metro-card-blurb">{m.blurb}</p>
-                  <span className="metro-card-service">{serviceLabel(m)}</span>
-                  <span className="metro-card-more">Ver alcance →</span>
+                  <span className="metro-card-body">
+                    <h3 className="metro-card-name">{m.name}</h3>
+                    <p className="metro-card-blurb">{m.blurb}</p>
+                    <span className="metro-card-service">{serviceLabel(m)}</span>
+                    <span className="metro-card-more">Ver alcance →</span>
+                  </span>
                 </button>
               ))}
             </div>
@@ -437,6 +446,12 @@ export default function Metrologia() {
             >
               ×
             </button>
+            <div className="metro-modal-img">
+              <img
+                src={selected.image}
+                alt={`Calibración de ${selected.name}`}
+              />
+            </div>
             <div className="metro-modal-head">
               <span className="metro-modal-icon" aria-hidden="true">
                 {selected.icon}
