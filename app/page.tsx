@@ -123,8 +123,11 @@ export default function Home() {
             <Link className="contact-btn contact-btn--green" href="/catalogo">
               Ver catálogo de equipos <span aria-hidden="true">→</span>
             </Link>
+            <Link className="contact-btn contact-btn--teal" href="/metrologia">
+              Ver metrología y calibración <span aria-hidden="true">→</span>
+            </Link>
             <a
-              className="contact-btn contact-btn--navy"
+              className="contact-btn contact-btn--outline"
               href="https://wa.me/5215580615457?text=Hola%2C%20me%20interesa%20recibir%20informaci%C3%B3n%20sobre%20sus%20equipos%20y%20servicios%20SICA%20Mediciones."
               target="_blank"
               rel="noopener noreferrer"
@@ -200,6 +203,15 @@ export default function Home() {
                   <p className="home-card-text">{s.text}</p>
                 </div>
               ))}
+            </div>
+            <div className="home-services-cta">
+              <Link
+                className="contact-btn contact-btn--green"
+                href="/metrologia"
+              >
+                Ver servicios de metrología y calibración{" "}
+                <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </div>
         </section>
