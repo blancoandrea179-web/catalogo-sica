@@ -92,6 +92,19 @@ const brands = [
   "Tiger Optics",
 ];
 
+// Nombre de archivo del logotipo en /public/logos (debe coincidir con la extracción del PDF).
+function brandSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+// Reparte las marcas en 3 filas para el carrusel horizontal.
+const brandRows: string[][] = [[], [], []];
+brands.forEach((b, i) => brandRows[i % 3].push(b));
+
 export default function Home() {
   return (
     <>
@@ -268,10 +281,25 @@ export default function Home() {
               instrumentación analítica y de proceso:
             </p>
             <div className="home-brands">
-              {brands.map((b) => (
-                <span className="home-brand-chip" key={b}>
-                  {b}
-                </span>
+              {brandRows.map((row, i) => (
+                <div className="home-brand-track" key={i}>
+                  <div
+                    className={`home-brand-marquee${
+                      i % 2 === 1 ? " home-brand-marquee--reverse" : ""
+                    }`}
+                  >
+                    {[...row, ...row].map((b, j) => (
+                      <div
+                        className="home-brand-logo"
+                        key={`${b}-${j}`}
+                        title={b}
+                        aria-hidden={j >= row.length ? true : undefined}
+                      >
+                        <img src={`/logos/${brandSlug(b)}.png`} alt={b} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
