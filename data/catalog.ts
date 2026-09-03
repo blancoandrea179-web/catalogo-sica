@@ -155,9 +155,9 @@ export const catalog: Brand[] = [
         "image": "/images/image101.jpg"
       },
       {
-        "name": "SmartChem 600 Analizador Discreto",
-        "description": "El SmartChem 600 de AMS Alliance (KPM Analytics) es el analizador discreto de química húmeda de mayor capacidad de la gama, con un rendimiento de hasta 600 pruebas por hora, carga de 200 posiciones y 3 brazos de muestreo para máxima eficiencia. Realiza análisis fotométricos multiparamétricos automatizados para laboratorios de alta demanda.",
-        "image": "/images/image102.jpg"
+        "name": "SmartChem 800 Analizador Automatizado Discreto",
+        "description": "El analizador discreto SmartChem® 800 es una plataforma de química húmeda de alta capacidad totalmente automatizada diseñada para laboratorios comerciales modernos. Ofrece un análisis fotométrico rápido y confiable con un funcionamiento realmente inmediato, y está diseñado para laboratorios que buscan el máximo rendimiento, eficiencia y control de costos. Con hasta 800 muestras cargadas a la vez y un rendimiento de hasta 600 pruebas por hora, el SmartChem® 800 ofrece una verdadera automatización automática con una alta productividad y precisión.",
+        "image": "/images/image102.avif"
       },
       {
         "name": "Futura 3 Analizador de Flujo Continuo",
@@ -388,6 +388,54 @@ export const catalog: Brand[] = [
         "name": "Hobré Integrated Product Solutions — Integración de Sistemas",
         "description": "Hobré Integrated Product Solutions es la oferta de soluciones de analizadores de proceso completamente personalizadas de Hobré (fundada en 1978), que integra la selección de las mejores tecnologías de analizador disponibles, un buen entendimiento de las condiciones de proceso y los requisitos de desempeño, junto con sistemas de acondicionamiento y validación de muestra diseñados a medida. Sus equipos de ingeniería, producción, pruebas y servicio colaboran con clientes de industrias como petróleo y gas (upstream, midstream, downstream) y la industria láctea (instalaciones de secado por aspersión), ofreciendo soluciones como medición de corte de agua, monitoreo de aceite en agua, análisis de H2S en distintas etapas del procesamiento de crudo y gas, y medición de humedad en producción de gas.",
         "image": "/images/image30.jpg"
+      }
+    ]
+  },
+  {
+    "name": "INTERSCIENCE",
+    "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Alimentos", "Farmacéutica", "Medio Ambiente", "Académico"],
+    "products": [
+      {
+        "name": "DiluFlow Pro — Diluidor gravimétrico 5 kg",
+        "description": "El DiluFlow Pro de Interscience es un diluidor gravimétrico automático que prepara diluciones de muestras sólidas con diluyente hasta un peso total de 5 kg, incorporando un brazo robótico articulado que facilita su uso dentro de cabinas de flujo laminar y un perfil ultra-bajo que ahorra espacio de trabajo. Cuenta con un rango de pesada de 0.1 a 5,000 g, factores de dilución de 1/2 a 1/99, una precisión de dilución superior al 99% y una velocidad de dispensado de 225 mL en 10 segundos; su sistema de sujeción patentado GeckoGrip y su bandeja de seguridad extraíble simplifican la preparación de muestras para análisis microbiológicos, PCR y pooling conforme a ISO 7218 e ISO 6887.",
+        "image": "/images/image107.jpg"
+      },
+      {
+        "name": "BagMixer 400 P — Homogeneizador 400 mL",
+        "description": "El BagMixer 400 P de Interscience es un homogeneizador de bolsas (stomacher) robusto, fabricado íntegramente en acero inoxidable, con apertura de puerta de 270° para un acceso total a la cámara de trabajo y una limpieza eficaz. Procesa volúmenes de 50 a 400 mL a una velocidad fija de 8 golpes por segundo, con tiempo de homogeneización ajustable entre 30 y 210 segundos (o modo continuo) y cierre patentado Q-Tight que evita fugas hasta 250 kg de presión; es utilizado para la extracción microbiana de muestras en las industrias alimentaria, farmacéutica, veterinaria y ambiental, conforme a ISO 7218, ISO 6887 y el FDA BAM.",
+        "image": "/images/image108.jpg"
+      },
+      {
+        "name": "FlexiPump — Bomba peristáltica dosificadora",
+        "description": "El FlexiPump de Interscience es una bomba peristáltica dosificadora compacta e intuitiva para la preparación de medios de cultivo, distribución de agar en placas Petri y diluciones seriadas en laboratorios de microbiología. Dispensa volúmenes desde 50 µL hasta 99.9 L en modo continuo, por dosis o multi-dosis, con 32 programas personalizables, un caudal de 1.5 mL/min a 1.25 L/min y una precisión típica de hasta ±0.5%; cumple con ISO 7218, ISO 6887 y el FDA BAM, y es utilizado en las industrias alimentaria, farmacéutica, cosmética, ambiental y veterinaria.",
+        "image": "/images/image109.jpg"
+      },
+      {
+        "name": "easySpiral Pro — Sembrador automático",
+        "description": "El easySpiral Pro de Interscience es un sembrador automático en espiral que permite sembrar en una sola placa cargas bacterianas de 100 hasta 1×10⁷ UFC/mL sin necesidad de diluciones previas, mediante una jeringa de vidrio de alta precisión (0.5%) y tres modos de siembra: exponencial, uniforme y en círculo. Sus volúmenes de siembra son programables vía USB (10 a 1,000 µL), completa un ciclo de siembra en 25 segundos, cuenta con desinfección automática patentada por sistema overflow y es compatible con placas de 90 y 150 mm, en cumplimiento de ISO 7218, ISO 4833-2, FDA BAM y AOAC 977.27.",
+        "image": "/images/image110.jpg"
+      },
+      {
+        "name": "Scan 50 pro — Contador manual de colonias con HandPad",
+        "description": "El Scan 50 pro de Interscience es un contador de colonias manual con HandPad, un reposabrazos ergonómico ambidiestro que permite un recuento cómodo de 0 a 1,999 UFC mediante una superficie táctil de sensibilidad ajustable. Incorpora el sistema de iluminación Dark Field 2 con cinco niveles de intensidad que elimina reflejos y protege la visión del operador, además de nueve sonidos con cinco niveles de volumen; es compatible con placas de Petri (Ø 55-90 mm), Petrifilm™, MC-Media Pads™, Compact Dry™, Easy Plate™ y membranas de filtración, con exportación de datos por USB, LIMS, CSV o texto, conforme a ISO 7218 y FDA BAM.",
+        "image": "/images/image111.jpg"
+      },
+      {
+        "name": "Scan 500 — Contador automático de colonias HD y lector de zonas de inhibición",
+        "description": "El Scan 500 de Interscience es un contador automático de colonias HD y lector de zonas de inhibición capaz de contar hasta 1,000 colonias en 1 segundo con una precisión del 98%, detectando colonias desde 0.1 mm en placas de Petri de 55 a 90 mm mediante una cámara CMOS de 1 megapíxel con zoom x28 e iluminación Dark Field. Ofrece modos de recuento en masa, superficie, espiral y círculo, detección automática de colonias confluentes, lectura en medios cromogénicos de hasta 4 colores y medición de zonas de inhibición con precisión de ±0.3 mm bajo los sistemas CA-SFM, EUCAST y CLSI; cumple con 21 CFR Part 11, ISO 7218 y AOAC 977.27.",
+        "image": "/images/image112.jpg"
+      },
+      {
+        "name": "Scan 3000 Ai — Contador automático de colonias con inteligencia artificial",
+        "description": "El Scan 3000 Ai de Interscience es un contador automático de colonias con inteligencia artificial y lector de zonas de inhibición, que entrega recuentos en menos de 1 segundo con una precisión constante de hasta el 98% y procesa hasta 400 lecturas de placas por hora. Su motor de IA, entrenado con más de un millón de imágenes sobre más de 20 medios de cultivo, discrimina artefactos y clasifica bacterias, levaduras y mohos, detectando colonias desde 0.03 mm en placas de 55 a 90 mm y hasta 7 antibióticos con precisión de ±0.2 mm bajo los estándares CA-SFM, EUCAST y CLSI; cumple con 21 CFR Part 11, ISO 7218 y AOAC 977.27.",
+        "image": "/images/image113.jpg"
+      },
+      {
+        "name": "ScanStation 200 — Incubación y recuento de colonias en tiempo real",
+        "description": "La ScanStation 200 de Interscience es una estación que integra incubación, detección y recuento automático de colonias en tiempo real para hasta 200 placas de Petri simultáneas, registrando el crecimiento bacteriano conforme aparece con intervalos de lectura configurables de 30 minutos o 1 hora. Incorpora tecnología Peltier sin compresor para calentar y refrigerar entre 20°C y 45°C con precisión de ±1°C, una cámara de 5 megapíxeles con almacenamiento de imágenes de 2 a 5 años, y algoritmos de inteligencia artificial con una precisión de recuento del 98%; admite siembra en superficie, profundidad, espiral, membrana de filtración, muestreo de aire, placas de contacto y Petrifilm™ en formatos de Ø 54-67 mm y 85-96 mm, cumpliendo con 21 CFR Part 11, GMP e ISO 9001.",
+        "image": "/images/image114.jpg"
       }
     ]
   },

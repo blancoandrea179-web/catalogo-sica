@@ -231,33 +231,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Catálogo CTA */}
-        <section className="home-section">
-          <div className="home-container">
-            <div className="home-catalog-cta">
-              <div>
-                <span className="home-eyebrow home-eyebrow--light">
-                  Catálogo
-                </span>
-                <h2 className="home-h2 home-h2--light">
-                  Explora nuestros equipos por categoría, sector y marca
-                </h2>
-                <p className="home-lead home-lead--light">
-                  Fichas técnicas de equipos de laboratorio y analizadores de
-                  proceso, con imágenes, descripciones y solicitud directa por
-                  WhatsApp o correo.
-                </p>
-              </div>
-              <Link
-                className="contact-btn contact-btn--green home-catalog-btn"
-                href="/catalogo"
-              >
-                Ir al catálogo <span aria-hidden="true">→</span>
-              </Link>
-            </div>
-          </div>
-        </section>
-
         {/* Marcas */}
         <section className="home-section home-section--tint">
           <div className="home-container">
