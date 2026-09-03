@@ -1031,71 +1031,22 @@ footer {
   font-size: 17px;
 }
 
-/* Marcas — carrusel horizontal en 3 filas */
+/* Marcas — lista de nombres */
 .home-brands {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   margin-top: 32px;
 }
-.home-brand-track {
-  overflow: hidden;
-  /* Difumina los extremos para que las marcas entren/salgan suavemente. */
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    #000 8%,
-    #000 92%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    #000 8%,
-    #000 92%,
-    transparent
-  );
-}
-.home-brand-marquee {
-  display: flex;
-  width: max-content;
-  animation: home-brand-scroll 90s linear infinite;
-}
-.home-brand-marquee--reverse {
-  animation-direction: reverse;
-}
-@keyframes home-brand-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-.home-brand-logo {
-  flex: 0 0 170px;
-  width: 170px;
-  height: 84px;
-  margin-right: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 18px;
-  background: #fff;
+.home-brand {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--page);
   border: 1px solid var(--line);
-  border-radius: 12px;
-}
-.home-brand-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-@media (prefers-reduced-motion: reduce) {
-  .home-brand-marquee {
-    animation: none;
-  }
+  border-radius: 999px;
+  padding: 10px 18px;
 }
 
 .home-contact-note {
