@@ -1031,25 +1031,71 @@ footer {
   font-size: 17px;
 }
 
-/* Marcas */
+/* Marcas — carrusel horizontal en 3 filas */
 .home-brands {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 28px;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
 }
-.home-brand-chip {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--navy);
+.home-brand-track {
+  overflow: hidden;
+  /* Difumina los extremos para que las marcas entren/salgan suavemente. */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+.home-brand-marquee {
+  display: flex;
+  width: max-content;
+  animation: home-brand-scroll 90s linear infinite;
+}
+.home-brand-marquee--reverse {
+  animation-direction: reverse;
+}
+@keyframes home-brand-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.home-brand-logo {
+  flex: 0 0 170px;
+  width: 170px;
+  height: 84px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 18px;
   background: #fff;
   border: 1px solid var(--line);
-  padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: 12px;
 }
-.home-section--tint .home-brand-chip {
-  background: var(--page);
+.home-brand-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-brand-marquee {
+    animation: none;
+  }
 }
 
 .home-contact-note {
