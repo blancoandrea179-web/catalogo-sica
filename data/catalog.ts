@@ -129,14 +129,14 @@ export const catalog: Brand[] = [
     ]
   },
   {
-    "name": "AMS (Alliance / KPM Analytics)",
+    "name": "KPM Analytics",
     "category": "Laboratorio",
     "priority": 3,
     "sectors": ["Alimentos", "Académico"],
     "products": [
       {
         "name": "Analizador de flujo continuo NexaFlo 460",
-        "description": "El NexaFlo® es un analizador automatizado de flujo continuo (segmentado) de KPM Analytics (antes AMS/Alliance), utilizado en laboratorios para el análisis de parámetros clave en agua potable, residual, de mar y extractos de suelo, entre ellos amonio, nitratos/nitritos, fósforo total, MBAS, fenol y cianuro. Cuenta con pantalla táctil integrada, bomba peristáltica de alta precisión, muestreador automático y protocolos de limpieza y arranque totalmente automatizados.",
+        "description": "El NexaFlo® es un analizador automatizado de flujo continuo (segmentado) de KPM Analytics, utilizado en laboratorios para el análisis de parámetros clave en agua potable, residual, de mar y extractos de suelo, entre ellos amonio, nitratos/nitritos, fósforo total, MBAS, fenol y cianuro. Cuenta con pantalla táctil integrada, bomba peristáltica de alta precisión, muestreador automático y protocolos de limpieza y arranque totalmente automatizados.",
         "image": "/images/image4.jpg"
       },
       {
@@ -146,12 +146,12 @@ export const catalog: Brand[] = [
       },
       {
         "name": "Icinac — Detección Multiparamétrica de Fermentos Lácticos",
-        "description": "El Icinac de AMS Alliance (KPM Analytics) es una solución diseñada específicamente para monitorear y analizar la actividad de acidificación de los fermentos lácticos, mediante la medición de pH con múltiples sondas y el análisis de bacterias del ácido láctico (LAB). Es ideal para el desarrollo y control de cultivos iniciadores, funcionales, bioprotectores y probióticos.",
+        "description": "El Icinac de KPM Analytics es una solución diseñada específicamente para monitorear y analizar la actividad de acidificación de los fermentos lácticos, mediante la medición de pH con múltiples sondas y el análisis de bacterias del ácido láctico (LAB). Es ideal para el desarrollo y control de cultivos iniciadores, funcionales, bioprotectores y probióticos.",
         "image": "/images/image100.jpg"
       },
       {
         "name": "SmartChem 200 Analizador Discreto",
-        "description": "El SmartChem 200 de AMS Alliance (KPM Analytics) es un analizador discreto de química húmeda por fotometría, totalmente automatizado, con capacidad de hasta 200 pruebas por hora y dilución automática final e inicial. Su diseño compacto integra el lavado y filtrado, siendo idóneo para el análisis ambiental y agroindustrial de aguas, fertilizantes y suelos.",
+        "description": "El SmartChem 200 de KPM Analytics es un analizador discreto de química húmeda por fotometría, totalmente automatizado, con capacidad de hasta 200 pruebas por hora y dilución automática final e inicial. Su diseño compacto integra el lavado y filtrado, siendo idóneo para el análisis ambiental y agroindustrial de aguas, fertilizantes y suelos.",
         "image": "/images/image101.jpg"
       },
       {
@@ -161,7 +161,7 @@ export const catalog: Brand[] = [
       },
       {
         "name": "Futura 3 Analizador de Flujo Continuo",
-        "description": "El Futura 3 de AMS Alliance (KPM Analytics) es un analizador automatizado de química húmeda de flujo continuo, dedicado a identificar y medir contaminantes en agua y suelo (fenoles, cianuros, detergentes, fósforo total, nitrógeno total, entre otros), con automuestreo continuo de efluente de hasta 120 análisis por hora. Es compatible con LIMS y cumple normas ISO, EPA, AFNOR y COFRAC.",
+        "description": "El Futura 3 de KPM Analytics es un analizador automatizado de química húmeda de flujo continuo, dedicado a identificar y medir contaminantes en agua y suelo (fenoles, cianuros, detergentes, fósforo total, nitrógeno total, entre otros), con automuestreo continuo de efluente de hasta 120 análisis por hora. Es compatible con LIMS y cumple normas ISO, EPA, AFNOR y COFRAC.",
         "image": "/images/image103.jpg"
       }
     ]
