@@ -111,6 +111,44 @@ export const catalog: Brand[] = [
     ]
   },
   {
+    "name": "ADRONA",
+    "category": "Laboratorio",
+    "priority": 3,
+    "sectors": ["Farmacéutica", "Química", "Académico", "Alimentos", "Medio Ambiente"],
+    "products": [
+      {
+        "name": "RADIX RO — Sistema de Ósmosis Inversa de Alta Capacidad",
+        "description": "El RADIX RO de Adrona es un sistema de ósmosis inversa de alta capacidad para la distribución centralizada de agua purificada en laboratorios e instalaciones industriales, disponible en tres capacidades (60, 100 y 250 L/h; catálogos RA-1001, RA-1003 y RA-1005) que producen hasta 250 L de agua RO por hora. Ofrece una tasa de rechazo de sólidos disueltos (TDS) ≥98.5% y, con filtro opcional, retiene partículas mayores a 0.22 μm a menos de 1/mL, con una interfaz de usuario intuitiva de indicación de estado por colores que simplifica la instalación y el mantenimiento. Opera con agua potable de alimentación (conductividad <1500 μS/cm, presión 0.4-4.0 bar, 5-35°C) y se utiliza en distribución centralizada de laboratorio, plantas de manufactura y alimentación de humidificadores y generadores de vapor.",
+        "image": "/images/image115.jpg"
+      },
+      {
+        "name": "Compact Sterifeed — Sistema de Alimentación para Autoclaves",
+        "description": "El Compact Sterifeed de Adrona (catálogo CT-1002) es un sistema dedicado diseñado para suministrar agua de alimentación a autoclaves y lavadoras de laboratorio, evitando la formación de espacios de aire que puedan bloquear la toma de agua del autoclave gracias a su tanque de almacenamiento presurizado. Produce agua con calidad de ósmosis inversa (tasa de rechazo de TDS ≥97%, partículas >0.22 μm <1/mL), con un caudal nominal de 10 L/h y presión de dispensado ajustable entre 100 y 180 kPa, en un diseño compacto (23×30×41 cm, 12 kg) de fácil instalación y mantenimiento. Admite accesorios como tanques de almacenamiento presurizados de 18, 60 o 100 L, prefiltros externos y módulo de esterilización UV LED.",
+        "image": "/images/image116.jpg"
+      },
+      {
+        "name": "Connect LT — Sistema de Pulido de Agua Ultrapura",
+        "description": "El Connect LT de Adrona es un sistema de pulido de agua ultrapura diseñado para conectarse a sistemas de distribución de agua pretratada, produciendo agua ultrapura conforme a la norma ISO 3696 Grado 1 (resistividad 18.2 MΩ·cm a 25°C, conductividad 0.055 μS/cm, TOC <5 ppb, bacterias <0.01 UFC/mL) a un caudal de dispensado de 1.5-2 L/min. Cuenta con pantalla táctil de 7 pulgadas, conectividad USB-C para exportación de datos, diseño compacto (29×44×61 cm, 17 kg) y un cartucho de intercambio iónico de gran capacidad que reduce el costo operativo; requiere agua de alimentación pretratada (conductividad <100 μS/cm, TOC <50 ppb, presión 0.4-4.0 bar). Se utiliza en HPLC/UHPLC, cromatografía, biología molecular, cultivo celular, espectroscopía, espectrometría de masas y preparación de buffers y reactivos.",
+        "image": "/images/image117.jpg"
+      },
+      {
+        "name": "Gradus XT-300 — Sistema Avanzado de Purificación de Agua de Laboratorio",
+        "description": "El Gradus XT-300 es el sistema de purificación de agua de laboratorio más avanzado de Adrona, gestionado de forma remota mediante controladores de pantalla táctil a color de 8 pulgadas (Flow Point) con dispensadores integrados, disponible en configuración de electrodesionización (EDI) o desionización (DI) con caudales de 5, 10 o 15 L/h. Ofrece doble calidad de agua desde una sola unidad: Grado 1 (ultrapura, resistividad 18.2 MΩ·cm, TOC <10 ppb estándar o <3 ppb en configuraciones LT/Bio, bacterias <0.01 UFC/mL) mediante el Flow Point XR, y Grado 2 (pura) mediante el Flow Point GR opcional, con registro de datos, dispensado volumétrico programable de 0.001 a 100 L y conectividad Ethernet/USB. Se instala en pared, bajo mesada o sobre mesa (33×45×63 cm la unidad principal) y se emplea en ICP-MS, ICP-OES, cromatografía líquida y biología molecular, operando con agua potable de alimentación (0.4-6.0 bar, <2000 μS/cm).",
+        "image": "/images/image118.jpg"
+      },
+      {
+        "name": "Gradus EDI — Sistema Inteligente de Purificación de Agua desde Grifo",
+        "description": "El Gradus EDI de Adrona es un sistema inteligente de purificación de agua que opera directamente desde agua de grifo, integrando un módulo de electrodesionización (EDI) que elimina la necesidad de reemplazo periódico de consumibles, sensores integrados de calibración de conductividad y pantalla táctil con registro de datos. Disponible en configuraciones Trace, LT y Bio con caudales de 3, 5, 10 o 15 L/h, entrega agua Grado 1 (ultrapura, resistividad 18.2 MΩ·cm) y Grado 2 (pura, conductividad ≤0.1 µS/cm), con niveles de TOC de <10 ppb (Trace) o <3 ppb (LT/Bio) y un caudal de dispensado de 1.5-2 L/min en un diseño compacto de 50(33)×45×63 cm. Sus aplicaciones principales incluyen ICP-MS/ICP-OES, cromatografía líquida y trabajo de biología molecular.",
+        "image": "/images/image119.jpg"
+      },
+      {
+        "name": "B310 — Sistema de Purificación de Agua Ultrapura",
+        "description": "El Adrona B310 es un sistema de purificación de agua ultrapura que entrega los tres tipos de agua requeridos en el laboratorio —ultrapura (Grado 1), pura (Grado 2) y de ósmosis inversa (RO)— desde una sola unidad integrada, disponible en configuraciones B310 HPLC y B310 Bio. Incorpora pantalla táctil a color de 7 pulgadas, electrónica y software rediseñados, conectividad Ethernet y USB para reportes de dispensado, mayor precisión de medición de conductividad y TOC, sistema integrado de recirculación de agua RO y soporte para múltiples dispensadores remotos. Ofrece agua Grado 1 con resistividad de 18.2 MΩ·cm a 25°C, caudal nominal de 10 L/h y de dispensado de 1.5-2 L/min, TOC <5 ppb y bacterias <0.01 UFC/mL, en un equipo de 32×56×58 cm y 28-29 kg, utilizado en aplicaciones generales de laboratorio, ICP-MS/OES, cromatografía líquida y biología molecular.",
+        "image": "/images/image120.webp"
+      }
+    ]
+  },
+  {
     "name": "ALCOR (PAC)",
     "category": "Laboratorio + Proceso",
     "priority": 5,
