@@ -158,11 +158,6 @@ export const catalog: Brand[] = [
         "name": "SmartChem 800 Analizador Automatizado Discreto",
         "description": "El analizador discreto SmartChem® 800 es una plataforma de química húmeda de alta capacidad totalmente automatizada diseñada para laboratorios comerciales modernos. Ofrece un análisis fotométrico rápido y confiable con un funcionamiento realmente inmediato, y está diseñado para laboratorios que buscan el máximo rendimiento, eficiencia y control de costos. Con hasta 800 muestras cargadas a la vez y un rendimiento de hasta 600 pruebas por hora, el SmartChem® 800 ofrece una verdadera automatización automática con una alta productividad y precisión.",
         "image": "/images/image102.avif"
-      },
-      {
-        "name": "Futura 3 Analizador de Flujo Continuo",
-        "description": "El Futura 3 de KPM Analytics es un analizador automatizado de química húmeda de flujo continuo, dedicado a identificar y medir contaminantes en agua y suelo (fenoles, cianuros, detergentes, fósforo total, nitrógeno total, entre otros), con automuestreo continuo de efluente de hasta 120 análisis por hora. Es compatible con LIMS y cumple normas ISO, EPA, AFNOR y COFRAC.",
-        "image": "/images/image103.jpg"
       }
     ]
   },
