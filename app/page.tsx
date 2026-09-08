@@ -147,6 +147,23 @@ const brandCatalogMap: Record<string, string> = {
 };
 const catalogBrandNames = new Set(catalog.map((b) => b.name));
 
+// Excepciones al slug automático de logo (archivo en /public/logos con un
+// nombre distinto al de la marca actual, ej. tras un cambio de nombre).
+const brandLogoOverrides: Record<string, string> = {
+  "KPM Analytics": "ams-alliance",
+};
+
+// Convierte el nombre comercial de la marca en el slug de su archivo de
+// logo en /public/logos (ej. "Alpha Omega Instruments" -> "alpha-omega-instruments").
+const brandLogoSlug = (name: string) =>
+  brandLogoOverrides[name] ??
+  name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
 export default function Home() {
   return (
     <>
@@ -319,17 +336,28 @@ export default function Home() {
             <h2 className="home-h2">Más de 30 marcas líderes a nivel mundial</h2>
             <p className="home-lead">
               Contamos con la representación de marcas líderes en
-              instrumentación analítica y de proceso. Las marcas subrayadas
-              enlazan directo a su ficha en el catálogo:
+              instrumentación analítica y de proceso. Los logos con enlace
+              llevan directo a su ficha en el catálogo:
             </p>
             <div className="home-brands">
               {brands.map((b) => {
                 const catalogName = brandCatalogMap[b];
                 const linked = catalogName && catalogBrandNames.has(catalogName);
+                const content = (
+                  <>
+                    <img
+                      className="home-brand-logo"
+                      src={`/logos/${brandLogoSlug(b)}.png`}
+                      alt={b}
+                      loading="lazy"
+                    />
+                    <span className="home-brand-name">{b}</span>
+                  </>
+                );
                 if (!linked) {
                   return (
                     <span className="home-brand" key={b}>
-                      {b}
+                      {content}
                     </span>
                   );
                 }
@@ -339,7 +367,7 @@ export default function Home() {
                     href={`/catalogo#${brandSlug(catalogName)}`}
                     key={b}
                   >
-                    {b}
+                    {content}
                   </Link>
                 );
               })}

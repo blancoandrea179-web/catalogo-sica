@@ -18,6 +18,16 @@ export default function StatCounter({ value, label, prefix = "", suffix = "" }: 
     const el = ref.current;
     if (!el) return;
 
+    // Sin soporte de IntersectionObserver, o si el usuario prefiere menos
+    // movimiento: mostrar la cifra final directamente, sin animar.
+    if (
+      typeof IntersectionObserver === "undefined" ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setCount(value);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];

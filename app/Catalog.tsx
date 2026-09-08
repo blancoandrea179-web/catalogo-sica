@@ -8,7 +8,6 @@ import type { Brand, Category, Sector, Product } from "@/data/catalog";
 import {
   brandSlug,
   categoryOrder,
-  priorityMeta,
   sectorBlurb,
   sectorOrder,
 } from "@/data/catalog";
@@ -49,6 +48,23 @@ function SectorParamSync({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sectorParam]);
   return null;
+}
+
+// Miniatura de producto con placeholder de marca cuando no hay imagen o la
+// imagen falla al cargar (en vez de mostrar el ícono de imagen rota).
+function ProductImage({ src, alt }: { src: string | null; alt: string }) {
+  const [failed, setFailed] = useState(false);
+  if (!src || failed) {
+    return (
+      <span className="ph--empty">
+        <img className="ph--empty-logo" src="/logo.png" alt="" aria-hidden="true" />
+        <span className="ph--empty-text">Imagen no disponible</span>
+      </span>
+    );
+  }
+  return (
+    <img loading="lazy" src={src} alt={alt} onError={() => setFailed(true)} />
+  );
 }
 
 export default function Catalog({ brands }: Props) {
@@ -408,12 +424,6 @@ export default function Catalog({ brands }: Props) {
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         <h3 className="brand-title">{brand.name}</h3>
-                        <span
-                          className="brand-prio"
-                          title={`${priorityMeta[brand.priority].label} (según la matriz de responsables)`}
-                        >
-                          {priorityMeta[brand.priority].stars}
-                        </span>
                         <span className="brand-count">
                           {brand.products.length} equipo
                           {brand.products.length !== 1 ? "s" : ""}
@@ -458,16 +468,12 @@ export default function Catalog({ brands }: Props) {
                             }}
                           >
                             <div className="ph">
-                              {p.image ? (
-                                <img loading="lazy" src={p.image} alt={p.name} />
-                              ) : (
-                                <span className="ph--empty">Sin imagen</span>
-                              )}
+                              <ProductImage src={p.image} alt={p.name} />
                               <span className="ph-hint">Ver detalles</span>
                             </div>
                             <div className="card-body">
-                              <h3 className="prod-name">{p.name}</h3>
                               <span className="prod-brand">{brand.name}</span>
+                              <h3 className="prod-name">{p.name}</h3>
                             </div>
                           </div>
                         ))}
@@ -509,11 +515,7 @@ export default function Catalog({ brands }: Props) {
               ×
             </button>
             <div className="modal-img">
-              {selected.product.image ? (
-                <img src={selected.product.image} alt={selected.product.name} />
-              ) : (
-                <span className="ph--empty">Sin imagen</span>
-              )}
+              <ProductImage src={selected.product.image} alt={selected.product.name} />
             </div>
             <div className="modal-info">
               <span className="modal-brand">{selected.brand}</span>

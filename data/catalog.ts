@@ -23,22 +23,19 @@ export const categoryOrder: Category[] = [
 ];
 
 // Prioridad de línea definida en la matriz de responsables
-// (última columna "PRIORIDAD DE LÍNEA", expresada en estrellas ★).
+// (última columna "PRIORIDAD DE LÍNEA"). Uso interno, no se muestra al cliente.
 export type Priority = 5 | 4 | 3 | 2 | 1;
 
 // Orden de despliegue de las prioridades (de mayor a menor).
 export const priorityOrder: Priority[] = [5, 4, 3, 2, 1];
 
-// Etiqueta y estrellas de cada nivel de prioridad.
-export const priorityMeta: Record<
-  Priority,
-  { label: string; stars: string }
-> = {
-  5: { label: "Prioridad máxima", stars: "★★★★★" },
-  4: { label: "Prioridad alta", stars: "★★★★" },
-  3: { label: "Prioridad media", stars: "★★★" },
-  2: { label: "Prioridad baja", stars: "★★" },
-  1: { label: "Prioridad mínima", stars: "★" },
+// Etiqueta de cada nivel de prioridad (uso interno).
+export const priorityMeta: Record<Priority, { label: string }> = {
+  5: { label: "Prioridad máxima" },
+  4: { label: "Prioridad alta" },
+  3: { label: "Prioridad media" },
+  2: { label: "Prioridad baja" },
+  1: { label: "Prioridad mínima" },
 };
 
 // Sectores prioritarios definidos en la matriz de responsables
@@ -155,7 +152,7 @@ export const catalog: Brand[] = [
       {
         "name": "B310 — Sistema de Purificación de Agua Ultrapura",
         "description": "El Adrona B310 es un sistema de purificación de agua ultrapura que entrega los tres tipos de agua requeridos en el laboratorio —ultrapura (Grado 1), pura (Grado 2) y de ósmosis inversa (RO)— desde una sola unidad integrada, disponible en configuraciones B310 HPLC y B310 Bio. Incorpora pantalla táctil a color de 7 pulgadas, electrónica y software rediseñados, conectividad Ethernet y USB para reportes de dispensado, mayor precisión de medición de conductividad y TOC, sistema integrado de recirculación de agua RO y soporte para múltiples dispensadores remotos. Ofrece agua Grado 1 con resistividad de 18.2 MΩ·cm a 25°C, caudal nominal de 10 L/h y de dispensado de 1.5-2 L/min, TOC <5 ppb y bacterias <0.01 UFC/mL, en un equipo de 32×56×58 cm y 28-29 kg, utilizado en aplicaciones generales de laboratorio, ICP-MS/OES, cromatografía líquida y biología molecular.",
-        "image": "/images/image120.webp"
+        "image": "/images/image120.jpg"
       }
     ]
   },
@@ -206,7 +203,7 @@ export const catalog: Brand[] = [
       {
         "name": "SmartChem 800 Analizador Automatizado Discreto",
         "description": "El analizador discreto SmartChem® 800 es una plataforma de química húmeda de alta capacidad totalmente automatizada diseñada para laboratorios comerciales modernos. Ofrece un análisis fotométrico rápido y confiable con un funcionamiento realmente inmediato, y está diseñado para laboratorios que buscan el máximo rendimiento, eficiencia y control de costos. Con hasta 800 muestras cargadas a la vez y un rendimiento de hasta 600 pruebas por hora, el SmartChem® 800 ofrece una verdadera automatización automática con una alta productividad y precisión.",
-        "image": "/images/image102.avif"
+        "image": "/images/image102.jpg"
       }
     ]
   },
