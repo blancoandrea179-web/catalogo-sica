@@ -239,8 +239,23 @@ const industries = [
   "Refinación",
 ];
 
+type ModeFilter = "all" | "onSite" | "inLab";
+
+const modeFilters: { key: ModeFilter; label: string }[] = [
+  { key: "all", label: "Todas" },
+  { key: "onSite", label: "En sitio" },
+  { key: "inLab", label: "En laboratorio" },
+];
+
 export default function Metrologia() {
   const [selected, setSelected] = useState<Magnitude | null>(null);
+  const [modeFilter, setModeFilter] = useState<ModeFilter>("all");
+
+  const visibleMagnitudes = magnitudes.filter((m) => {
+    if (modeFilter === "onSite") return m.onSite;
+    if (modeFilter === "inLab") return m.inLab;
+    return true;
+  });
 
   // Cerrar modal con ESC y bloquear scroll de fondo.
   useEffect(() => {
@@ -313,8 +328,25 @@ export default function Metrologia() {
               Selecciona una magnitud para ver los instrumentos, alcances y
               modalidad de servicio.
             </p>
+            <div className="catfilter metro-filter" role="group" aria-label="Filtrar por modalidad">
+              {modeFilters.map((f) => (
+                <button
+                  key={f.key}
+                  className={`chip ${modeFilter === f.key ? "chip--active" : ""}`}
+                  onClick={() => setModeFilter(f.key)}
+                  aria-pressed={modeFilter === f.key}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+            {visibleMagnitudes.length === 0 && (
+              <p className="empty-msg">
+                No hay magnitudes con esta modalidad de servicio.
+              </p>
+            )}
             <div className="metro-grid">
-              {magnitudes.map((m) => (
+              {visibleMagnitudes.map((m) => (
                 <button
                   className="metro-card"
                   key={m.code}

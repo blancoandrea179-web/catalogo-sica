@@ -2,9 +2,11 @@
 
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import type { Brand, Category, Sector, Product } from "@/data/catalog";
 import {
+  brandSlug,
   categoryOrder,
   priorityMeta,
   sectorBlurb,
@@ -32,15 +34,22 @@ const categoryBlurb: Record<Category, string> = {
   "Nueva Marca": "Nuevas representaciones",
 };
 
-// Ancla estable por marca para el menú desplegable de navegación.
-const brandSlug = (name: string) =>
-  "brand-" +
-  name
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
+// Lee "?sector=" en la URL (ej. enlaces desde la página de inicio) y
+// aplica el filtro correspondiente al cargar. Aislado en Suspense para no
+// bloquear el renderizado del resto del catálogo mientras se resuelve.
+function SectorParamSync({
+  onSector,
+}: {
+  onSector: (sector: string) => void;
+}) {
+  const searchParams = useSearchParams();
+  const sectorParam = searchParams.get("sector");
+  useEffect(() => {
+    if (sectorParam) onSector(sectorParam);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sectorParam]);
+  return null;
+}
 
 export default function Catalog({ brands }: Props) {
   const [query, setQuery] = useState("");
@@ -49,6 +58,23 @@ export default function Catalog({ brands }: Props) {
   const [category, setCategory] = useState<Category | null>(null);
   const [sector, setSector] = useState<Sector | null>(null);
   const [selected, setSelected] = useState<Selected | null>(null);
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [showTop, setShowTop] = useState(false);
+
+  // Un enlace entrante con "?sector=" (ej. desde la página de inicio) agrupa
+  // y filtra directamente por ese sector.
+  const applySectorParam = (value: string) => {
+    if (!sectorOrder.includes(value as Sector)) return;
+    setGroupBy("sector");
+    setSector(value as Sector);
+  };
+
+  // Mostrar el botón "volver arriba" tras desplazarse una pantalla.
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Cambiar el criterio de agrupación reinicia los filtros para no dejar
   // una vista vacía al mezclar dimensiones.
@@ -153,6 +179,9 @@ export default function Catalog({ brands }: Props) {
 
   return (
     <>
+      <Suspense fallback={null}>
+        <SectorParamSync onSector={applySectorParam} />
+      </Suspense>
       <div className="topbar" />
       <header className="hero">
         <Link className="hero-home-link" href="/">
@@ -240,6 +269,29 @@ export default function Catalog({ brands }: Props) {
           </div>
 
           <div className="navtools">
+          <div className="viewmode" role="group" aria-label="Vista de equipos">
+            <button
+              className={`viewmode-btn ${
+                viewMode === "grid" ? "viewmode-btn--active" : ""
+              }`}
+              onClick={() => setViewMode("grid")}
+              aria-pressed={viewMode === "grid"}
+              title="Vista de cuadrícula"
+            >
+              <span aria-hidden="true">▦</span>
+            </button>
+            <button
+              className={`viewmode-btn ${
+                viewMode === "list" ? "viewmode-btn--active" : ""
+              }`}
+              onClick={() => setViewMode("list")}
+              aria-pressed={viewMode === "list"}
+              title="Vista de lista"
+            >
+              <span aria-hidden="true">☰</span>
+            </button>
+          </div>
+
           <label className="brand-select-label" htmlFor="brand-select">
             Ir a la marca
           </label>
@@ -388,7 +440,7 @@ export default function Catalog({ brands }: Props) {
                           </span>
                         ))}
                       </div>
-                      <div className="grid">
+                      <div className={`grid ${viewMode === "list" ? "grid--list" : ""}`}>
                         {brand.products.map((p) => (
                           <div
                             className="card"
@@ -428,6 +480,17 @@ export default function Catalog({ brands }: Props) {
           });
         })()}
       </main>
+
+      {showTop && (
+        <button
+          className="back-to-top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Volver arriba"
+          title="Volver arriba"
+        >
+          <span aria-hidden="true">↑</span>
+        </button>
+      )}
 
       {/* Modal de detalle */}
       {selected && (

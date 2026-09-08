@@ -1,5 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import HomeQuickNav from "./components/HomeQuickNav";
+import StatCounter from "./components/StatCounter";
+import { brandSlug, catalog, type Sector } from "@/data/catalog";
 
 // Datos tomados del Folleto Corporativo SICA Medición.
 const strengths = [
@@ -92,9 +95,62 @@ const brands = [
   "Tiger Optics",
 ];
 
+// Relaciona cada industria del folleto con su sector equivalente en el
+// catálogo, para poder saltar directo a los equipos de esa industria.
+const industrySectorMap: Record<string, Sector> = {
+  "Petrolera y Refinación": "Petróleo/Gas",
+  "Petroquímica": "Petróleo/Gas",
+  "Química": "Química",
+  "Aceites y Lubricantes": "Lubricantes",
+  "Gas Natural y LP": "Petróleo/Gas",
+  "Automotriz": "Automotriz",
+  "Alimentos y Bebidas": "Alimentos",
+  "Agua y Medio Ambiente": "Medio Ambiente",
+  "Farmacéutica": "Farmacéutica",
+  "Minería": "Minería",
+  "Energía": "Energía",
+  "Investigación": "Académico",
+};
+
+// Sólo enlazamos a sectores que realmente tienen marcas asignadas como
+// sector prioritario principal en el catálogo, para no llevar al visitante
+// a una vista vacía.
+const sectorsWithBrands = new Set(catalog.map((b) => b.sectors[0]));
+
+// Relaciona el nombre comercial (folleto) con el nombre exacto de la marca
+// en el catálogo, para enlazar directo a su ficha técnica.
+const brandCatalogMap: Record<string, string> = {
+  Alcor: "ALCOR (PAC)",
+  "Analytical Controls": "AC ANALYTICAL CONTROL B.V. (AC / PAC)",
+  Antek: "ANTEK (PAC)",
+  "Aqua Science": "AQUA SCIENCE",
+  CFR: "CFR ENGINES INC.",
+  "COSA XENTAUR": "COSA XENTAUR",
+  EXTREL: "EXTREL (Process Insights)",
+  Gerhardt: "GERHARDT",
+  Herzog: "HERZOG (PAC)",
+  HORIBA: "HORIBA",
+  ISL: "ISL (Instrumentation Scientifique de Laboratoire — PAC)",
+  KEM: "KEM (Kyoto Electronics Manufacturing)",
+  "King Refrigeration": "KING REFRIGERATION",
+  "KPM Analytics": "KPM Analytics",
+  LAR: "LAR (Process Insights)",
+  LAUDA: "LAUDA — TERMOSTATOS",
+  "LAUDA Scientific": "LAUDA SCIENTIFIC",
+  NIC: "NIPPON INSTRUMENTS CORPORATION (NIC)",
+  PAC: "PAC (Petroleum Analyzer Company)",
+  "PCS Instruments": "PCS INSTRUMENTS",
+  "Phase Technology": "PHASE TECHNOLOGY (PAC)",
+  Servomex: "SERVOMEX",
+  "Stanhope Seta": "STANHOPE-SETA",
+  Tannas: "TANNAS",
+};
+const catalogBrandNames = new Set(catalog.map((b) => b.name));
+
 export default function Home() {
   return (
     <>
+      <HomeQuickNav />
       <div className="topbar" />
 
       {/* Encabezado / Hero corporativo */}
@@ -119,6 +175,12 @@ export default function Home() {
             de venta de equipo, mantenimiento, servicios de calibración y
             análisis en México y Centroamérica.
           </p>
+          <div className="home-stats">
+            <StatCounter value={30} suffix="+" label="Años de experiencia" />
+            <StatCounter value={catalog.length} suffix="+" label="Marcas representadas" />
+            <StatCounter value={industries.length} label="Industrias atendidas" />
+            <StatCounter value={2} label="Normas ISO certificadas" />
+          </div>
           <div className="home-hero-cta">
             <Link className="contact-btn contact-btn--green" href="/catalogo">
               Ver catálogo de equipos <span aria-hidden="true">→</span>
@@ -140,7 +202,7 @@ export default function Home() {
 
       <main>
         {/* ¿Quiénes somos? */}
-        <section className="home-section">
+        <section className="home-section" id="nosotros">
           <div className="home-container">
             <span className="home-eyebrow">¿Quiénes somos?</span>
             <h2 className="home-h2">
@@ -169,7 +231,7 @@ export default function Home() {
         </section>
 
         {/* Fortalezas */}
-        <section className="home-section home-section--tint">
+        <section className="home-section home-section--tint" id="fortalezas">
           <div className="home-container">
             <span className="home-eyebrow">Fortalezas de SICA</span>
             <h2 className="home-h2">Por qué elegirnos</h2>
@@ -186,7 +248,7 @@ export default function Home() {
         </section>
 
         {/* Servicios */}
-        <section className="home-section">
+        <section className="home-section" id="servicios">
           <div className="home-container">
             <span className="home-eyebrow">Nuestros servicios</span>
             <h2 className="home-h2">
@@ -217,42 +279,77 @@ export default function Home() {
         </section>
 
         {/* Industrias */}
-        <section className="home-section home-section--tint">
+        <section className="home-section home-section--tint" id="industrias">
           <div className="home-container">
             <span className="home-eyebrow">Industrias que atendemos</span>
             <h2 className="home-h2">Presentes en cada sector clave</h2>
+            <p className="home-lead">
+              Haz clic en una industria para ver el equipo relacionado en el
+              catálogo.
+            </p>
             <div className="home-industries">
-              {industries.map((i) => (
-                <span className="home-industry" key={i}>
-                  {i}
-                </span>
-              ))}
+              {industries.map((i) => {
+                const sector = industrySectorMap[i];
+                const linked = sector && sectorsWithBrands.has(sector);
+                if (!linked) {
+                  return (
+                    <span className="home-industry" key={i}>
+                      {i}
+                    </span>
+                  );
+                }
+                return (
+                  <Link
+                    className="home-industry home-industry--linked"
+                    href={`/catalogo?sector=${encodeURIComponent(sector)}`}
+                    key={i}
+                  >
+                    {i} <span aria-hidden="true">→</span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
 
         {/* Marcas */}
-        <section className="home-section home-section--tint">
+        <section className="home-section home-section--tint" id="marcas">
           <div className="home-container">
             <span className="home-eyebrow">Marcas representadas</span>
             <h2 className="home-h2">Más de 30 marcas líderes a nivel mundial</h2>
             <p className="home-lead">
               Contamos con la representación de marcas líderes en
-              instrumentación analítica y de proceso:
+              instrumentación analítica y de proceso. Las marcas subrayadas
+              enlazan directo a su ficha en el catálogo:
             </p>
             <div className="home-brands">
-              {brands.map((b) => (
-                <span className="home-brand" key={b}>
-                  {b}
-                </span>
-              ))}
+              {brands.map((b) => {
+                const catalogName = brandCatalogMap[b];
+                const linked = catalogName && catalogBrandNames.has(catalogName);
+                if (!linked) {
+                  return (
+                    <span className="home-brand" key={b}>
+                      {b}
+                    </span>
+                  );
+                }
+                return (
+                  <Link
+                    className="home-brand home-brand--linked"
+                    href={`/catalogo#${brandSlug(catalogName)}`}
+                    key={b}
+                  >
+                    {b}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
       </main>
 
       {/* Banda de contacto */}
-      <section className="contact-band">
+      <section className="contact-band" id="contacto">
         <img className="footer-logo" src="/logo.png" alt="SICA Mediciones" />
         <h2 className="contact-title">Contáctanos</h2>
         <div className="footer-contact">

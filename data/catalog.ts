@@ -96,6 +96,17 @@ export interface Brand {
   products: Product[];
 }
 
+// Ancla estable por marca, usada tanto en el catálogo (id de sección) como
+// en enlaces entrantes desde otras páginas (ej. inicio) hacia esa marca.
+export const brandSlug = (name: string) =>
+  "brand-" +
+  name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
 export const catalog: Brand[] = [
   {
     "name": "AC ANALYTICAL CONTROL B.V. (AC / PAC)",
