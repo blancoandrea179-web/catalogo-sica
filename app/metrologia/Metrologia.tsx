@@ -69,9 +69,13 @@ const magnitudes: Magnitude[] = [
       { label: "Termómetro de líquido en vidrio", range: "-35 a 419 °C" },
       { label: "Termómetro de resistencia de platino", range: "-38 a 420 °C" },
       { label: "Termómetros bimetálicos" },
-      { label: "Sistemas de medición de temperatura (conjunto sensor + indicador)" },
+      {
+        label:
+          "Sistemas de medición de temperatura (conjunto sensor + indicador o registrador; sensor tipo RTD, termopar o termistor)",
+      },
+      { label: "Transmisores de temperatura" },
     ],
-    notes: ["Medios: mercurio y líquido orgánico."],
+    notes: ["Medios de termómetros de líquido en vidrio: mercurio y líquido orgánico."],
     onSite: true,
     inLab: true,
   },
