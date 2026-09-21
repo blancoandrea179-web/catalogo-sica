@@ -11,6 +11,7 @@ import {
   sectorBlurb,
   sectorOrder,
 } from "@/data/catalog";
+import { downloadCatalogPdf } from "./lib/downloadCatalogPdf";
 
 // Cómo se agrupan/segmentan las marcas en el catálogo.
 type GroupBy = "category" | "sector";
@@ -67,7 +68,7 @@ function ProductImage({ src, alt }: { src: string | null; alt: string }) {
   );
 }
 
-export default function Catalog({ brands }: Props) {
+export default function Catalog({ brands, totalProducts }: Props) {
   const [query, setQuery] = useState("");
   const [searchOpen, setSearchOpen] = useState(false);
   const [groupBy, setGroupBy] = useState<GroupBy>("category");
@@ -76,6 +77,24 @@ export default function Catalog({ brands }: Props) {
   const [selected, setSelected] = useState<Selected | null>(null);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [showTop, setShowTop] = useState(false);
+  const [pdfProgress, setPdfProgress] = useState<{ done: number; total: number } | null>(
+    null
+  );
+
+  const handleDownloadPdf = async () => {
+    if (pdfProgress) return;
+    setPdfProgress({ done: 0, total: totalProducts });
+    try {
+      await downloadCatalogPdf(brands, (done, total) =>
+        setPdfProgress({ done, total })
+      );
+    } catch (err) {
+      console.error("No se pudo generar el PDF del catálogo:", err);
+      alert("Ocurrió un error al generar el PDF. Intenta de nuevo.");
+    } finally {
+      setPdfProgress(null);
+    }
+  };
 
   // Un enlace entrante con "?sector=" (ej. desde la página de inicio) agrupa
   // y filtra directamente por ese sector.
@@ -210,6 +229,22 @@ export default function Catalog({ brands }: Props) {
               Ficha técnica de equipos de laboratorio y analizadores de proceso,
               organizados por categoría, sector y marca.
             </p>
+            <button
+              className="download-catalog-btn"
+              onClick={handleDownloadPdf}
+              disabled={!!pdfProgress}
+            >
+              {pdfProgress ? (
+                <>
+                  <span className="download-catalog-spinner" aria-hidden="true" />
+                  Generando PDF… {pdfProgress.done}/{pdfProgress.total}
+                </>
+              ) : (
+                <>
+                  <span aria-hidden="true">⬇</span> Descargar catálogo completo (PDF)
+                </>
+              )}
+            </button>
           </div>
         </div>
       </header>

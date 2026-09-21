@@ -260,7 +260,7 @@ export const catalog: Brand[] = [
       {
         "name": "Analizador de Porcentaje de Oxígeno, Alpha Omega Serie 2000",
         "description": "El Alpha Omega Instruments Series 2000 (marca de COSA Xentaur / Process Insights) es un analizador de oxígeno porcentual robusto y controlado por microprocesador, para medición continua o intermitente en rangos de 0-1% a 0-100%. Incorpora un sensor de electrolito mejorado (EES) de vida extendida que resiste la exposición a CO₂, pantalla LCD de 4½ dígitos y opera con alimentación de 115/230 VAC o 18-32 VDC; está disponible en configuración de banco, montaje en pared o en panel.",
-        "image": "/images/image10.jpg"
+        "image": "/images/Analizador de Porcentaje de Oxígeno, Alpha Omega Serie 2000.png"
       }
     ]
   },
@@ -286,7 +286,7 @@ export const catalog: Brand[] = [
       {
         "name": "MAX300-RTG 2.0 Espectrómetro de Masas Industrial",
         "description": "El Extrel MAX300-RTG 2.0 es un espectrómetro de masas cuadrupolo industrial de tiempo real para monitoreo continuo de la composición de corrientes de gas en aplicaciones de control de proceso, cumplimiento ambiental y monitoreo de aire ambiental. Utiliza el filtro cuadrupolo Extrel de 19 mm de referencia en la industria, ofrece pantalla táctil de 15 pulgadas con software Questor® 5, selector de flujo multipuerto para más de 160 muestras y rango de detección desde 5 ppb hasta 100%.",
-        "image": "/images/image12.jpg"
+        "image": "/images/MAX300-RTG 2.0 Espectrómetro de Masas Industrial.png"
       }
     ]
   },
@@ -299,7 +299,7 @@ export const catalog: Brand[] = [
       {
         "name": "SOXTHERM",
         "description": "El SOXTHERM SOX416 de C. Gerhardt es un sistema de extracción rápida sólido-líquido totalmente automatizado (hasta 4 veces más rápido que el método Soxhlet convencional) usado principalmente para determinación de grasa/materia grasa en alimentos y piensos, así como en análisis de residuos y medioambientales. Permite extraer hasta 24 muestras distintas en menos de 2 horas, con recuperación integrada de solvente y construcción a prueba de explosión para operación desatendida.",
-        "image": "/images/image13.jpg"
+        "image": "/images/SOXTHERM.png"
       },
       {
         "name": "FIBRETHERM®",
@@ -342,7 +342,7 @@ export const catalog: Brand[] = [
       {
         "name": "Analizador automático de punto de inflamación Pensky-Martens",
         "description": "PAC Powered by Herzog fabrica analizadores automáticos de punto de inflamación mediante el método de copa cerrada Pensky-Martens (línea HFP/OptiFlash), que detectan el punto de inflamación de productos derivados del petróleo conforme a ASTM D93 y normas equivalentes (ISO 2719, IP 34), con control de calentamiento electrónico, detección térmica precisa que evita interferencias de agua o silicona, y pantalla gráfica que corrige automáticamente por presión barométrica estándar.",
-        "image": "/images/image17.jpg"
+        "image": "/images/Analizador automático de punto de inflamación Pensky-Martens.png"
       },
       {
         "name": "Equipo para Presión de Vapor",
@@ -509,7 +509,7 @@ export const catalog: Brand[] = [
       {
         "name": "ISL OptiCPP Analizador de Punto de Fluidez, Sonda de Vidrio",
         "description": "El OptiCPP de ISL (PAC) combina un sistema de enfriamiento incorporado patentado con un mecanismo de detección de alta precisión para realizar pruebas de punto de nube y punto de fluidez (pour point) de productos del petróleo de forma completamente desatendida, hasta -95°C, conforme a los estándares internacionales aplicables.",
-        "image": "/images/image35.jpg"
+        "image": "/images/ISL OptiCPP Analizador de Punto de Fluidez, Sonda de Vidrio.png"
       }
     ]
   },
@@ -603,7 +603,7 @@ export const catalog: Brand[] = [
       {
         "name": "QuickTOCtrace",
         "description": "El LAR QuickTOCtrace es un analizador de carbono orgánico total (TOC) en línea diseñado para los rangos de medición más bajos, empleando oxidación UV y medición diferencial de conductividad, ideal para agua pura y ultrapura. Es compacto, con tiempo de reacción corto (primeros resultados en 30 segundos), cubre un rango de 0.1 a 1,000 ppb y cumple normas como USP <643>, <645> y EP 2.2.44, siendo especialmente utilizado en la industria farmacéutica y de semiconductores.",
-        "image": "/images/image43.jpg"
+        "image": "/images/QuickTOCtrace.png"
       },
       {
         "name": "QuickTOCpurity",
@@ -646,17 +646,17 @@ export const catalog: Brand[] = [
       {
         "name": "LAUDA Scientific MPT C",
         "description": "El MPT C de LAUDA Scientific es un tensiómetro de presión de burbuja para la determinación automática de la tensión superficial dinámica según el método de Fainerman, con mediciones programables desde 1 ms. Es ideal para caracterizar surfactantes y evaluar la cinética de adsorción en tintas, detergentes, cosméticos y formulaciones.",
-        "image": "/images/image81.jpg"
+        "image": "/images/LAUDA Scientific MPT C.png"
       },
       {
         "name": "LAUDA Scientific TD4",
         "description": "El TD4 de LAUDA Scientific es un tensiómetro de fuerza para la determinación automática de la tensión superficial e interfacial y de la concentración micelar crítica (CMC), empleando los métodos de anillo de Du Noüy y placa de Wilhelmy. Es un sistema compacto y sencillo de utilizar, con resultados almacenables en PC, orientado a control de calidad e investigación.",
-        "image": "/images/image82.jpg"
+        "image": "/images/LAUDA Scientific TD4.png"
       },
       {
         "name": "LAUDA Scientific TVT 2",
         "description": "El TVT 2 de LAUDA Scientific es un tensiómetro de volumen de gota para la determinación automática de la tensión superficial e interfacial dinámica, con ajuste micrométrico del posicionamiento y compatibilidad con jeringas de distintos tamaños. Permite estudiar la cinética interfacial en un amplio rango de tiempos de vida de gota.",
-        "image": "/images/image83.jpg"
+        "image": "/images/LAUDA Scientific TVT 2.png"
       },
       {
         "name": "LAUDA Scientific LSA 50",
@@ -842,7 +842,7 @@ export const catalog: Brand[] = [
       {
         "name": "Advanced Sensors — S-One / X-One / Watercut / Microscopía",
         "description": "Advanced Sensors, marca de PAC, desarrolla analizadores en línea para medición de aceite en agua y agua en aceite en procesos de producción de petróleo y gas. Su portafolio incluye el S-One y X-One (nueva generación de la exitosa serie EX para medición de aceite en agua), el Watercut (serie WIO-300, medición de alta sensibilidad de agua en aceite) y el analizador de Microscopía, que mide sólidos y aceite en agua producida apoyándose en inteligencia artificial y aprendizaje automático.",
-        "image": "/images/image68.jpg"
+        "image": "/images/Advanced Sensors.png"
       },
       {
         "name": "OptiFlash Cleveland Open Cup",
@@ -886,7 +886,7 @@ export const catalog: Brand[] = [
       {
         "name": "MultiExact 4100A2",
         "description": "El Servomex MultiExact 4100 es un sistema modular de análisis de gases que, en la configuración especificada, incorpora dos módulos de medición: uno de control de O2 y otro de CO2 al 20%, cada uno con dos alarmas configurables y salida analógica aislada de 4-20 mA. Cuenta con comunicación serial RS485/Modbus, cuatro contactos de relé, montaje en rack y manual del operador en inglés; el equipo está clasificado bajo el código de producto 902710 (país de origen: Reino Unido).",
-        "image": "/images/image71.jpg"
+        "image": "/images/MultiExact 4100A2.png"
       },
       {
         "name": "SERVOFLEX MiniFoodPack 5200",
@@ -924,7 +924,7 @@ export const catalog: Brand[] = [
       {
         "name": "Seta Herschel Emulsifier — 96700-2",
         "description": "El Herschel Emulsifier (96700-2) de Stanhope-Seta evalúa la capacidad de un aceite para separarse del agua (características de emulsión/desemulsibilidad) conforme a ASTM D1401, empleado en aceites de turbina, hidráulicos y de circulación. Sus estaciones agitan la mezcla aceite-agua bajo condiciones controladas y permiten observar el tiempo de separación de las fases.",
-        "image": "/images/image99.jpg"
+        "image": "/images/Seta Herschel Emulsifier — 96700-2.png"
       }
     ]
   },

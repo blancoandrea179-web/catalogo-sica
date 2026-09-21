@@ -114,6 +114,43 @@ a {
   color: #d3e3ea;
   font-size: 15.5px;
 }
+.download-catalog-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 11px 20px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--green);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: 0.16s;
+}
+.download-catalog-btn:hover:not(:disabled) {
+  background: var(--green-d);
+  transform: translateY(-2px);
+}
+.download-catalog-btn:disabled {
+  cursor: progress;
+  opacity: 0.85;
+}
+.download-catalog-spinner {
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: download-catalog-spin 0.7s linear infinite;
+}
+@keyframes download-catalog-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .hero .kpis {
   display: flex;
   gap: 22px;
