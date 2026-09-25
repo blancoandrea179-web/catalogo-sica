@@ -1036,42 +1036,22 @@ footer {
   font-size: 17px;
 }
 
-/* Marcas — grilla de logos */
+/* Marcas — lista de nombres */
 .home-brands {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 16px;
-  margin-top: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 30px;
 }
 .home-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: #fff;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--page);
   border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 20px 14px;
-  text-align: center;
-}
-.home-brand-logo {
-  height: 42px;
-  max-width: 100%;
-  object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.7;
-  transition: filter 0.25s ease, opacity 0.25s ease;
-}
-.home-brand-name {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--muted);
-  letter-spacing: 0.2px;
-}
-.home-brand:hover .home-brand-logo {
-  filter: grayscale(0);
-  opacity: 1;
+  border-left: 4px solid var(--green);
+  border-radius: 10px;
+  padding: 14px 16px;
 }
 
 .home-contact-note {
@@ -1398,40 +1378,30 @@ footer {
   cursor: pointer;
   transition: 0.15s;
 }
-.home-industry--linked {
+.home-industry--linked,
+.home-brand--linked {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
 }
-.home-industry--linked span {
+.home-industry--linked span,
+.home-brand--linked span {
   opacity: 0;
   transform: translateX(-4px);
   transition: 0.15s;
 }
-.home-industry--linked:hover {
+.home-industry--linked:hover,
+.home-brand--linked:hover {
   border-color: var(--accent);
   background: var(--green-l);
   color: var(--accent-d);
   transform: translateX(2px);
 }
-.home-industry--linked:hover span {
+.home-industry--linked:hover span,
+.home-brand--linked:hover span {
   opacity: 1;
   transform: translateX(0);
-}
-.home-brand--linked {
-  cursor: pointer;
-  border-color: #cfe8da;
-  transition: 0.2s;
-}
-.home-brand--linked:hover {
-  background: var(--green-l);
-  border-color: var(--accent);
-  box-shadow: 0 10px 22px rgba(2, 58, 86, 0.1);
-  transform: translateY(-2px);
-}
-.home-brand--linked:hover .home-brand-name {
-  color: var(--accent-d);
 }
 
 /* ============================================================
