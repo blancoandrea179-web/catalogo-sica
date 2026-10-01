@@ -204,6 +204,11 @@ export const catalog: Brand[] = [
         "name": "SmartChem 800 Analizador Automatizado Discreto",
         "description": "El analizador discreto SmartChem® 800 es una plataforma de química húmeda de alta capacidad totalmente automatizada diseñada para laboratorios comerciales modernos. Ofrece un análisis fotométrico rápido y confiable con un funcionamiento realmente inmediato, y está diseñado para laboratorios que buscan el máximo rendimiento, eficiencia y control de costos. Con hasta 800 muestras cargadas a la vez y un rendimiento de hasta 600 pruebas por hora, el SmartChem® 800 ofrece una verdadera automatización automática con una alta productividad y precisión.",
         "image": "/images/image102.jpg"
+      },
+      {
+        "name": "Monitor de fermentación iCinac Wired L.A.B.",
+        "description": "El analizador cableado iCinac es un sistema totalmente integrado para el monitoreo de la fermentación de las bacterias del ácido láctico y el análisis cinético, así como una unidad de control de biorreactores de fermentación multicanal (L.A.B.). Se usa ampliamente para monitorear los fermentos en cultivos iniciadores, funcionales, bioprotectores y probióticos. Está equipado con un módulo de control externo opcional para controlar los baños de calentamiento, las bombas peristálticas y los circuladores, y se convierte en una plataforma completa de biorreactores multiposición para fermentación L.A.B.",
+        "image": "/images/image121.jpg"
       }
     ]
   },
