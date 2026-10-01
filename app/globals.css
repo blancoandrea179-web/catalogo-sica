@@ -12,7 +12,7 @@
   --line: #e2e8ec;
   --card: #ffffff;
   --page: #f4f7f8;
-  --tile: #f5f5f5;
+  --tile: #fff;
 
   /* Acento único de marca: usado en CTAs, hover y cifras destacadas. */
   --accent: var(--green);
@@ -516,6 +516,7 @@ a {
 .ph {
   position: relative;
   background: var(--tile);
+  border: 1px solid var(--line);
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
@@ -533,7 +534,6 @@ a {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
-  mix-blend-mode: multiply;
 }
 /* Placeholder de marca cuando falta la imagen o falla al cargar */
 .ph--empty {
@@ -650,6 +650,7 @@ a {
 }
 .modal-img {
   background: var(--tile);
+  border-right: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -659,7 +660,6 @@ a {
   max-width: 100%;
   max-height: 60vh;
   object-fit: contain;
-  mix-blend-mode: multiply;
 }
 .modal-info {
   padding: 40px 34px 34px;
